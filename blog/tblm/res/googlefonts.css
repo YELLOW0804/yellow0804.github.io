@@ -1,0 +1,84 @@
+@font-face {
+	font-family: Lato;
+	src: local("Lato Light"), local("Lato-Light"), url(../fonts/Lato-Light.ttf) format("truetype"), url(../fonts/Lato-Light.woff) format("woff"), url(../fonts/Lato-Light.woff2) format("woff2");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Lato;
+	src: local("Lato Regular"), local("Lato-Regular"), local("Lato"), url(../fonts/Lato-Regular.ttf) format("truetype"), url(../fonts/Lato-Regular.woff) format("woff"), url(../fonts/Lato-Regular.svg#Lato) format("svg"), url(../fonts/Lato-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Lato-Regular.woff2) format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Lato;
+	src: local("Lato Bold"), local("Lato-Bold"), url(../fonts/Lato-Bold.ttf) format("truetype"), url(../fonts/Lato-Bold.woff) format("woff"), url(../fonts/Lato-Bold.woff2) format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Lato;
+	src: local("Lato Italic"), local("Lato-Italic"), url(../fonts/Lato-Italic.ttf) format("truetype"), url(../fonts/Lato-Italic.woff) format("woff"), url(../fonts/Lato-Italic.woff2) format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: Crete Round;
+	src: local("Crete Round Italic"), local("CreteRound-Italic"), local("Crete Round"), url(../fonts/Crete-Round-Italic.svg#CreteRound) format("svg"), url(../fonts/Crete-Round-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Crete-Round-Italic.woff2) format("woff2"), url(../fonts/Crete-Round-Italic.ttf) format("truetype"), url(../fonts/Crete-Round-Italic.woff) format("woff");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway Light"), local("Raleway-Light"), url(../fonts/Raleway-Light.woff2) format("woff2"), url(../fonts/Raleway-Light.ttf) format("truetype"), url(../fonts/Raleway-Light.woff) format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway"), local("Raleway-Regular"), url(../fonts/Raleway.eot?#iefix) format("embedded-opentype"), url(../fonts/Raleway.svg#Raleway) format("svg"), url(../fonts/Raleway.woff2) format("woff2"), url(../fonts/Raleway.ttf) format("truetype"), url(../fonts/Raleway.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway Medium"), local("Raleway-Medium"), url(../fonts/Raleway-Medium.woff2) format("woff2"), url(../fonts/Raleway-Medium.ttf) format("truetype"), url(../fonts/Raleway-Medium.woff) format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway SemiBold"), local("Raleway-SemiBold"), url(../fonts/Raleway-SemiBold.woff2) format("woff2"), url(../fonts/Raleway-SemiBold.ttf) format("truetype"), url(../fonts/Raleway-SemiBold.woff) format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: Raleway;
+	src: local("Raleway Bold"), local("Raleway-Bold"), url(../fonts/Raleway-Bold.woff2) format("woff2"), url(../fonts/Raleway-Bold.ttf) format("truetype"), url(../fonts/Raleway-Bold.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Source Sans Pro;
+	src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(../fonts/Source-Sans-Pro-Light.woff2) format("woff2"), url(../fonts/Source-Sans-Pro-Light.ttf) format("truetype"), url(../fonts/Source-Sans-Pro-Light.woff) format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Source Sans Pro;
+	src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(../fonts/Source-Sans-Pro.svg#SourceSansPro) format("svg"), url(../fonts/Source-Sans-Pro.woff2) format("woff2"), url(../fonts/Source-Sans-Pro.ttf) format("truetype"), url(../fonts/Source-Sans-Pro.eot?#iefix) format("embedded-opentype"), url(../fonts/Source-Sans-Pro.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Source Sans Pro;
+	src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url(../fonts/Source-Sans-Pro-Semibold.woff2) format("woff2"), url(../fonts/Source-Sans-Pro-Semibold.ttf) format("truetype"), url(../fonts/Source-Sans-Pro-Semibold.woff) format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: Source Sans Pro;
+	src: local("Source Sans Pro Black"), local("SourceSansPro-Black"), url(../fonts/Source-Sans-Pro-Black.woff2) format("woff2"), url(../fonts/Source-Sans-Pro-Black.ttf) format("truetype"), url(../fonts/Source-Sans-Pro-Black.woff) format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
