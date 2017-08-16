@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轻量级jQuery倒计时插件 - 站长素材</title>
+
+
+
+</head>
+
+<body>
+    <h1 align="center" style="margin-top:150px;">轻量级jQuery倒计时插件</h1>
+    <ul class="countdown">
+        <li> <span class="days">00</span>
+            <p class="days_ref">days</p>
+        </li>
+        <li class="seperator">.</li>
+        <li> <span class="hours">00</span>
+            <p class="hours_ref">hours</p>
+        </li>
+        <li class="seperator">:</li>
+        <li> <span class="minutes">00</span>
+            <p class="minutes_ref">minutes</p>
+        </li>
+        <li class="seperator">:</li>
+        <li> <span class="seconds">00</span>
+            <p class="seconds_ref">seconds</p>
+        </li>
+    </ul>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.downCount.js"></script>
+    <script class="source" type="text/javascript">
+        $('.countdown').downCount({
+            date: '12/24/2020 12:00:00',
+            offset: +10
+        }, function() {
+            alert('倒计时结束!');
+        });
+    </script>
+
+</body>
+
+</html>
