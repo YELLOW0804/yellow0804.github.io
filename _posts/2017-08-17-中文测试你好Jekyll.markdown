@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "中文测试"
+date:   2017-08-17 8:00:01 +0800
+categories: jekyll update
+---
+
+# 你好Jekyll
+
+对中文的支持。以及`高亮`。
+两个傻子，一个一句话没有，一个一张嘴就是没正经嗑
