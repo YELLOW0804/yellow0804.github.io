@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<!-- saved from url=(0229)file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE.html -->
+<html lang="zh-hant" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="file://platform.twitter.com/widgets.js"></script>
+  
+<link rel="apple-touch-icon" href="https://igdshare.org/sites/default/files/igds_favicon.png" type="image/png">
+<link rel="apple-touch-icon-precomposed" href="https://igdshare.org/sites/default/files/igds_favicon.png" type="image/png">
+<meta name="description" content="直接開門見山地說，這場演講是我在 GDC 的獨立遊戲峰會（Independent Games Summit）之中，聽過最實用且令人敬佩的一場演講。講者是 Untame 工作室的 Itay Keren，他目前正在開發的《Mushroom 11》，源自於他參加 2012 年的 Global Game Jam 所製作的成果。本作的玩家角色時而合體、時而分裂、有大有小、有長有短。自然在攝影機系統的控制上，就會是相當棘手的一件事情。也因此，Itay 才投入大量時間來研究 2D 遊戲攝影機系統的沿革。">
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+<link rel="canonical" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren">
+<link rel="shortlink" href="https://igdshare.org/node/709">
+<meta property="og:site_name" content="IGDSHARE">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren">
+<meta property="og:title" content="[GDC 2015] Scroll Back - 2D 捲軸遊戲的攝影機理論與實務">
+<meta property="og:description" content="直接開門見山地說，這場演講是我在 GDC 的獨立遊戲峰會（Independent Games Summit）之中，聽過最實用且令人敬佩的一場演講。講者是 Untame 工作室的 Itay Keren，他目前正在開發的《Mushroom 11》，源自於他參加 2012 年的 Global Game Jam 所製作的成果。本作的玩家角色時而合體、時而分裂、有大有小、有長有短。自然在攝影機系統的控制上，就會是相當棘手的一件事情。也因此，Itay 才投入大量時間來研究 2D 遊戲攝影機系統的沿革。">
+<meta property="og:updated_time" content="2015-05-29T16:52:09+08:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren">
+<meta name="twitter:title" content="[GDC 2015] Scroll Back - 2D 捲軸遊戲的攝影機理論與實務">
+<meta name="twitter:description" content="直接開門見山地說，這場演講是我在 GDC 的獨立遊戲峰會（Independent Games Summit）之中，聽過最實用且令人敬佩的一場演講。講者是 Untame 工作室的 Itay Keren，他目前正在開發的《Mushroom 11》，源自於他參加 2012 年的 Global Game Jam">
+<meta name="twitter:image:alt" content="IGDSHARE LOGO">
+<meta property="article:published_time" content="2015-05-27T06:56:00+08:00">
+<meta property="article:modified_time" content="2015-05-29T16:52:09+08:00">
+<link rel="shortcut icon" href="https://igdshare.org/sites/default/files/igds_favicon.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+  <title>[GDC 2015] Scroll Back - 2D 捲軸遊戲的攝影機理論與實務 | IGDSHARE</title>
+  <link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_ztDZmKQxSZQXOJa8xWZYkiaRHA-N9Fkv-NC15dVmaQM.css" media="all">
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_5uDjv3B9Uhu1sEURf7IxAEmj1k_-nQBNkyxmwiXd0cc.css" media="all">
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_E0jAUO5Cos0iptXf6RUAAaRKJ7mrOEOw0ksFr1-Vrts.css" media="all">
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#back-top{right:40px;}#back-top span#button{background-color:#777777;}#back-top span#button:hover{opacity:1;filter:alpha(opacity = 1);background-color:#777777;}span#link{display :none;}
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_zlVi_UBW3gODsaCBp-wlx9A7zAoTcpvfR1BJoVGoMCA.css" media="all">
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_2F1jf1HPkcAJ6fMvgXKznx4Ppbmc_PNRcswxXksQbGE.css" media="all">
+<link type="text/css" rel="stylesheet" href="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print">
+  <script src="./scroll_files/all.js.下载" async="" crossorigin="anonymous"></script><script src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/all.js.%E4%B8%8B%E8%BD%BD" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/all.js(1).%E4%B8%8B%E8%BD%BD"></script><script id="twitter-wjs" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/widgets.js.%E4%B8%8B%E8%BD%BD"></script><script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_vDrW3Ry_4gtSYaLsh77lWhWjIC6ml2QNkcfvfP5CVFs.js.%E4%B8%8B%E8%BD%BD"></script>
+<script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_SnqDZy7r2rDDl1XAt2tnFv70o5-NYx2CT2y6uETxb0Q.js.%E4%B8%8B%E8%BD%BD"></script>
+<script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_u1ynPyTO-OcctBsiohRkp3zlXKjX0otMPNlmF-0WIME.js.%E4%B8%8B%E8%BD%BD"></script>
+<script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_GnkP2ZcstwGQcPM3cTgG-e5ubLCt4AcWk4f3uX_IhdA.js.%E4%B8%8B%E8%BD%BD"></script>
+<script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_Ofj7l77ezpDbolpobDa4RheMhVKbTyVzE5npFE8teE4.js.%E4%B8%8B%E8%BD%BD"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"igdshare","theme_token":"5GTiLXn52Dh8No7h_lZIot7z2yiVHe-3MNUYNxQt1Ic","js":{"sites\/all\/modules\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/syntaxhighlighter_insert\/syntaxhighlighter_insert.utils.js":1,"sites\/all\/modules\/syntaxhighlighter_insert\/syntaxhighlighter_insert.js":1,"misc\/ui\/jquery.ui.button.min.js":1,"misc\/ui\/jquery.ui.mouse.min.js":1,"misc\/ui\/jquery.ui.draggable.min.js":1,"misc\/ui\/jquery.ui.position.min.js":1,"misc\/ui\/jquery.ui.resizable.min.js":1,"misc\/ui\/jquery.ui.dialog.min.js":1,"sites\/all\/modules\/views\/js\/jquery.ui.dialog.patch.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/libraries\/syntaxhighlighter_3.0.83\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter_3.0.83\/scripts\/shAutoloader.js":1,"sites\/default\/files\/syntaxhighlighter.autoloader.js":1,"sites\/all\/modules\/caption_filter\/js\/caption-filter.js":1,"public:\/\/languages\/zh-hant_9NmgzupP8Y4uoLKbwefPvfKXjKDLguIHN-lrMHQnzxc.js":1,"sites\/all\/modules\/lightbox2\/js\/auto_image_handling.js":1,"sites\/all\/modules\/lightbox2\/js\/lightbox.js":1,"sites\/all\/modules\/quote\/quote.js":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.js":1,"sites\/all\/modules\/service_links\/js\/facebook_share.js":1,"sites\/all\/modules\/service_links\/js\/twitter_button.js":1,"sites\/all\/modules\/hybridauth\/js\/hybridauth.modal.js":1,"sites\/all\/modules\/hybridauth\/js\/hybridauth.onclick.js":1,"sites\/all\/modules\/fb_likebox\/fb_likebox.js":1,"sites\/all\/themes\/igdshare\/js\/collapsible-menu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.css":1,"sites\/all\/modules\/akismet\/akismet.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/caption_filter\/caption-filter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/lightbox2\/css\/lightbox.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/quote\/quote.css":1,"0":1,"sites\/all\/libraries\/syntaxhighlighter_3.0.83\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter_3.0.83\/styles\/shThemeDjango.css":1,"sites\/all\/modules\/wysiwyg_linebreaks\/wysiwyg_linebreaks.css":1,"sites\/all\/modules\/advanced_forum\/styles\/naked\/advanced-forum.naked.structure.css":1,"sites\/all\/modules\/advanced_forum\/styles\/naked_stacked\/advanced-forum.naked_stacked.structure.css":1,"sites\/all\/modules\/advanced_forum\/styles\/naked\/advanced-forum.naked.images.css":1,"sites\/all\/modules\/syntaxhighlighter_insert\/syntaxhighlighter_insert_wysiwyg\/syntaxhighlighter_insert_wysiwyg.css":1,"sites\/all\/modules\/hybridauth\/css\/hybridauth.css":1,"sites\/all\/modules\/hybridauth\/css\/hybridauth.modal.css":1,"sites\/all\/modules\/hybridauth\/plugins\/icon_pack\/hybridauth_32\/hybridauth_32.css":1,"sites\/all\/themes\/igdshare\/css\/layout.css":1,"sites\/all\/themes\/igdshare\/css\/style.css":1,"sites\/all\/themes\/igdshare\/css\/igds.css":1,"sites\/all\/themes\/igdshare\/css\/colors.css":1,"sites\/all\/themes\/igdshare\/css\/print.css":1}},"lightbox2":{"rtl":"0","file_path":"\/(\\w\\w\/)public:\/","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":1,"force_show_nav":0,"show_caption":0,"loop_items":0,"node_link_text":"\u6aa2\u8996\u5716\u50cf\u8a73\u7d30\u8cc7\u8a0a","node_link_target":0,"image_count":"\u5716\u7247 !current \u5171 !total \u500b","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":"lightbox","custom_trigger_classes":"img.lightbox","disable_for_gallery_lists":0,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":720,"iframe_height":480,"iframe_border":1,"enable_video":0,"useragent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/76.0.3809.100 Safari\/537.36"},"quote_nest":2,"scroll_to_top":{"label":"Back to top"},"syntaxhighlighter":{"useAutoloader":true},"ws_fs":{"type":"button_count","app_id":"182079448555217","css":"margin-bottom:8px;vertical-align:bottom"},"syntaxhighlighter_insert_wysiwyg":{"current_form":"form-remJJVi-kzBG9qZL_XA6KxNegsA0XYN8HaJXjq8WxVo"},"urlIsAjaxTrusted":{"\/content\/gdc2015-2d-scrolling-itay-keren":true,"\/content\/gdc2015-2d-scrolling-itay-keren?destination=node\/709":true},"fb_likebox_app_id":"","fb_likebox_language":"en_EN"});
+//--><!]]>
+</script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <script src="/sites/all/themes/igdshare/js/selectivizr-min.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script src="/sites/all/themes/igdshare/js/html5-respond.js"></script>
+  <![endif]-->
+<script charset="utf-8" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/moment_timeline_tweet.3fd6099de8eff1ea82d1c2e6aaae7f2a.js.%E4%B8%8B%E8%BD%BD"></script><script charset="utf-8" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/timeline.d84f4cde83f27f19ba61062e363bc8e4.js.%E4%B8%8B%E8%BD%BD"></script><script charset="utf-8" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/button.fc9ebf951a9289ff2153fdd98b8fd4a4.js.%E4%B8%8B%E8%BD%BD"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-709 node-type-forum footer-columns lightbox-processed">
+  <div id="skip-link">
+    <a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#main-content" class="element-invisible element-focusable">移至主內容</a>
+  </div>
+    <div id="page-wrapper"><div id="page">
+
+  <header id="header" role="banner" class="without-secondary-menu"><div class="section clearfix">
+        
+    
+          <a href="https://igdshare.org/" title="首頁" rel="home" id="logo">
+        <img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/logo_test_4_thinner_1_0.png" alt="首頁">
+      </a>
+    
+          <div id="name-and-slogan" class="element-invisible">
+
+                              <div id="site-name" class="element-invisible">
+              <strong>
+                <a href="https://igdshare.org/" title="首頁" rel="home"><span>IGDSHARE</span></a>
+              </strong>
+            </div>
+                  
+                  <div id="site-slogan" class="element-invisible">
+            獨立遊戲開發者分享會          </div>
+        
+      </div> <!-- /#name-and-slogan -->
+    
+    
+          <nav id="main-menu" role="navigation" class="navigation">
+        <h2 class="element-invisible">主選單</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-246 first"><a href="https://igdshare.org/" title="">首頁</a></li>
+<li class="menu-519"><a href="https://igdshare.org/news">最新消息</a></li>
+<li class="menu-478"><a href="https://igdshare.org/forum" title="">討論區</a></li>
+<li class="menu-1012"><a href="https://igdshare.org/links" title="與獨立遊戲開發有關之各種資源、網站連結。">相關連結</a></li>
+<li class="menu-1026"><a href="https://igdshare.org/content/rss">RSS</a></li>
+<li class="menu-487"><a href="https://igdshare.org/about">關於我們</a></li>
+<li class="menu-488"><a href="https://igdshare.org/about-en">About Us</a></li>
+<li class="menu-710 last"><a href="https://igdshare.org/contact" title="">聯絡我們</a></li>
+</ul>      <a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" id="menu-toggle">選單</a></nav> <!-- /#main-menu -->
+      </div></header> <!-- /.section, /#header -->
+
+  
+  
+  <div id="main-wrapper" class="clearfix"><div id="main" role="main" class="clearfix">
+
+    <h2 class="element-invisible">您在這裡</h2><div class="breadcrumb"><a href="https://igdshare.org/">首頁</a> » <a href="https://igdshare.org/forum">討論區</a> » <a href="https://igdshare.org/forum/research">專題探討</a></div>
+    <div id="content" class="column"><div class="section">
+            <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          [GDC 2015] Scroll Back - 2D 捲軸遊戲的攝影機理論與實務        </h1>
+                          <div class="tabs">
+                  </div>
+                          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    
+  
+<div id="forum-topic-header" class="forum-topic-header clearfix">
+	
+  <div class="topic-post-count">
+  2 篇文章 / 0 新  </div>
+
+      <div class="topic-reply-link">
+    發表回應前，請先<a href="https://igdshare.org/user/login?destination=node/709%23comment-form">登入</a>或<a href="https://igdshare.org/user/register?destination=node/709%23comment-form">註冊</a>    </div>
+  
+  
+      <div class="last-post-link">
+     <a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#comment-378" class="af-button-large active"><span>最新文章</span></a>    </div>
+  
+
+  <a id="forum-topic-top"></a>
+</div>
+
+<div id="post-709" class="forum-post clearfix zh-hant posted-by-123 node-full" about="/content/gdc2015-2d-scrolling-itay-keren" typeof="sioc:Post sioct:BoardPost">
+  <div class="forum-post-info clearfix">
+    <div class="forum-posted-on">
+            <div class="meta submitted">
+                <div class="user-picture">
+    <img typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/picture-123-1365054878.png" width="64" height="64" alt="johnson_lin&#39;s 的頭像" title="johnson_lin&#39;s 的頭像">  </div>
+            </div>
+      <span property="dc:date dc:created" content="2015-05-27T06:56:00+08:00" datatype="xsd:dateTime" rel="sioc:has_creator">由 <span class="username" xml:lang="" about="/users/johnsonlin" typeof="sioc:UserAccount" property="foaf:name" datatype="">johnson_lin</span> (管理員) 在 星期三,05/27/2015 - 06:56 發表</span>
+                </div>
+    
+    
+        
+    <span class="forum-post-number"><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren" class="active">#1</a></span>
+  </div> 
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-main clearfix">
+              <div class="forum-post-title">
+          [GDC 2015] Scroll Back - 2D 捲軸遊戲的攝影機理論與實務        </div>
+      
+      <div class="forum-post-content">
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p> <img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/img01.jpg"></p>
+<p>直接開門見山地說，這場演講是我在 GDC 的獨立遊戲峰會（Independent Games Summit）之中，聽過最實用且令人敬佩的一場演講。請不要被你畫面右側的捲軸給嚇到，沒錯，這篇文章就是這麼長。</p>
+<iframe allowfullscreen="" frameborder="0" height="340" src="./scroll_files/tftdhHxvJKY.html" width="600"></iframe><p>
+講者是 Untame 工作室的 Itay Keren，他目前正在開發的《Mushroom 11》，源自於他參加 2012 年的 Global Game Jam 所製作的成果。當年度的創作主題是一張「銜尾蛇」的圖案，而《Mushroom 11》的基本玩法，就是玩家操縱一隻由許多細胞組成，可變形的「香菇」（本文後面都稱「菌體」），用遊標或手指將自己的細胞清除時，同步會在身體的其他部位長出來，甚至可以切斷身體來通關。而唯一的資源就是細胞總數是固定的，還有細胞重生的速度仍有一定限制。</p>
+<p>若稍微想一下，就會發覺玩家角色時而合體、時而分裂、有大有小、有長有短。自然在攝影機系統的控制上，就會是相當棘手的一件事情。也因此，Itay 才投入大量時間來研究 2D 遊戲攝影機系統的沿革。</p>
+<p>實際上，早在我從 GDC 回來之時就有打算著手撰寫聽講心得，不過後來各種拖延症併發。直到 Itay 兩週前發公佈了他演講的文字版內容，我這邊可說是沒有任何理由可以拖稿了，於是直接徵得他的同意，進行全文翻譯。過程中重新體會了不少曾經玩過或不曾玩過的老遊戲，收益良多，發現以前根本沒注意過這些細節；而且還順道幫他勘了幾個誤，也算是做出一點回饋吧。</p>
+<p><span style="line-height: 1.538em;">希望讀者在一面閱覽的同時，可以花些時間去找文中提到的遊戲來試試，也許也會發現到你以往玩過或聽過的遊戲，原來在這些小地方還有這樣的設計差異。OK，譯者前言結束，底下正文開始。</span></p>
+<p>&nbsp;</p>
+<p>※ ※ ※（正文開始）※ ※ ※</p>
+<p><big><strong>Scroll Back - 2D 捲軸遊戲的攝影機理論與實務</strong></big></p>
+<p><a href="https://docs.google.com/document/d/1iNSQIyNpVGHeak6isbP6AHdHD50gs8MNXF1GCf08efg/pub?embedded=true#h.kskmkvkk89rz" target="_blank">原文 Google Doc 網址請點此</a></p>
+<p>撰文／Itay Keren，<a href="https://twitter.com/untamegames" target="_blank">Untame</a>&nbsp;遊戲工作室負責人，<a href="http://mushroom11.com/" target="_blank">Mushroom 11</a> 遊戲開發者<br>
+翻譯／Johnson Lin（正體中文，本文全文翻譯已獲得 Itay Keren 本人授權同意）</p>
+<p>這是我在 GDC 2015 獨立遊戲峰會中<a href="http://www.gdcvault.com/play/1022243/Scroll-Back-The-Theory-and" target="_blank">演講內容</a>的修訂版。它包含了一些畫面捲動相關的背景知識，以及大量的經典懷舊遊戲案例。我希望能對你有幫助，祝你讀得愉快！</p>
+<p><big><strong>目次</strong></big></p>
+<p><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect1">概要</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect2">畫面捲動</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect3">視覺神經相關知識</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect4">注意力、互動性、舒適感</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect5">重溫經典</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect6">跟著操作走</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect7">抑制攝影機動態</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect8">歸位</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect9">柔化</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect10">構圖</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect11">導演工作</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect12">多焦點攝影機</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect13">手動操控</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect14">畫面晃動效果</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect15">量身打造</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect16">《Mushroom 11》</a><br><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#sect17">詞彙</a></p>
+<p><a name="sect1" id="sect1"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>概要</strong></big></p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/screenshot3.jpg" style="margin: 10px 2px; height: 130px; width: 213px; float: left;"></p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/ss_80f6dcffc1f202975998456710b6e2542c5c3571.jpg" style="height: 130px; width: 213px; margin: 10px 2px; float: left;"></p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/ss_f3d37fa02167a77373cff363d4b74d5c10b175c3.jpg" style="height: 130px; width: 213px; float: left; margin: 10px 2px;"></p>
+<p><span style="line-height: 1.538em;">我在設計《Mushroom 11》時，遇上了很多不同的設計與技術上的挑戰。當然，我並不指望可以找到太多關於處理動態改變的形狀，或頂點動畫的參考資料。但令我意外的是，連遊戲中攝影機該怎麼處理，這件在遊戲開發上至少已存在 30 年的老問題，都幾乎沒有什麼詳細的討論。</span></p>
+<p>我決定來做個 2D 遊戲大考古，紀錄它們設計上曾遭遇的困難，以及解決方式的演進。另外，因為這方面在很多細節上缺乏適當的術語，我把它們分門別類後，就自行定義了些標籤，就算只是讓我自己方便參考也好。</p>
+<p><a name="sect2" id="sect2"></a></p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><big><strong>畫面捲動</strong></big></p>
+<p>畫面捲動或平移，簡單來說就是想辦法把一個比螢幕還大的場景呈現出來的手法。這有許多細節須要注意，譬如說抉擇玩家該看到什麼，設計者希望玩家聚焦在哪，以及要怎麼讓玩家覺得流暢與舒適。雖然我主要只討論 2D 的攝影機系統，但許多後面會提到的概念也可延伸到 3D 遊戲。</p>
+<p><a name="sect3" id="sect3"></a></p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><big><strong>視覺神經相關知識</strong></big></p>
+<p>在我們開始一一檢視這些遊戲之前，先來講視覺神經對於畫面捲動時的接收處理概念。有了這個背景知識，我們才知道有哪些地方可能造成問題。</p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/fovea.jpg" style="float: left; height: 222px; width: 220px; margin: 10px;"></p>
+<p>&nbsp;</p>
+<p><span style="line-height: 1.538em;">眼球的主要接收帶「中央小窩」負責處理銳利與精細的中央視覺；而第二與第三接收帶「中央小窩外圍」及「黃斑周邊」，則是專門讓圖像與動態化約成特定模式，讓週遭改變能被快速察覺，譬如說，辨識已熟悉但危險的形狀、或是速度與方向上的改變等。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="line-height: 1.538em;">這部分資訊有快速連通到大腦杏仁核的管道，使得視覺中樞還在處理畫面時，仍保有警覺和隨時應變能力。而這項能力是可以被訓練的，大腦可以漸漸習慣遊戲操作時，畫面周邊所產生的位移變化。</span></p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/ear_anatomy.jpg" style="float: left; height: 206px; width: 240px; margin: 10px;"></p>
+<p>&nbsp;</p>
+<p>前庭系統位於人體內耳，是掌管平衡以及空間方向感的器官。它所送出的訊號，讓你可以在聚焦於特定視覺細節上時，還能保持身體平衡。</p>
+<p><span style="line-height: 1.538em;">對某些人來說（譬如說我），在車內專注看書的時候，因為缺乏周遭視覺回饋，再加上速度上的改變，可能就會造成暈眩和噁心感。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>在相反情況下這也會發生：當周邊視覺很快地注意到背景中的改變時，大腦也會預期前庭系統告訴它相關改變的資訊。當前庭沒有送出任何訊號時（因為你只是杵在電腦螢幕前），也可能會造成一樣的結果。</p>
+<p>是故，只要視覺與前庭系統回傳互相衝突的訊號，就有可能導致不舒服與噁心感。就算這個問題在 3D 遊戲（特別是 VR 遊戲中）才更顯著，但在 2D 遊戲中這個問題仍確實存在。</p>
+<p><a name="sect4" id="sect4"></a></p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><big><strong>注意力、互動性、舒適感</strong></big></p>
+<p>為了更進一步瞭解畫面捲動造成的問題，我將需要克服的困難分成三大類：</p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/tumblr_inline_nmb03or4hF1qdpljh_540.jpg" style="float: left; height: 247px; width: 300px; margin: 10px;"></p>
+<p>&nbsp;</p>
+<p><strong>注意力</strong>：使用攝影機來提供充份的遊戲資訊與回饋（玩家需要看到的東西）</p>
+<p><strong>互動性</strong>：讓玩家對於什麼要顯示在畫面上有明確的控制，使背景的變化與遊戲操作緊密連動並可預測（玩家想要看到的東西）</p>
+<p><strong>舒適感</strong>：舒緩背景變化，使其盡量連貫與流暢（如何柔和地達成前述兩項需求）</p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><a name="sect5" id="sect5"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>重溫經典</strong></big></p>
+<p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/nostalgia_strip.jpg" style="height: 308px; width: 640px; margin-top: 10px; margin-bottom: 10px;"></p>
+<p>讓我們先回到 1980 年代吧！當時的設計者在各種 30 年後的我們很難想像的技術限制之下，仍提出了許多嶄新的解決方案。你會發覺我也參考了很多近十年來的知名獨立遊戲作品，因為這些作品呈現出了獨立開發者應有的創造力與細心程度，而在它們的攝影機設計上，也反映出了這樣的結果。</p>
+<p><a name="sect6" id="sect6"></a></p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><big><strong>跟著操作走</strong></big></p>
+<p><strong>將注意力留在你操作的主角上</strong></p>
+<p>先從基礎的開始。一般來說，玩家擁有主角的控制權，而這代表應讓攝影機緊緊跟著主角，使得注意力得以導向該角色。</p>
+<p>在 80 年代早期，捲動畫面是一件很艱困的任務。開發者面對的限制有 CPU、記憶體的容量與分段問題。在這些挑戰下，仍有不少經典 2D 捲軸遊戲面市，巧妙地克服了這些困難。當然，在很多情況下，我們能想像這些動態其實都很簡單或精度偏低。</p>
+<p>像《迷魂車》（Rally-X）這樣的一款 1980 年出品的遊戲，居然可以解決各種技術問題，而實作了完整的雙軸向捲軸攝影機，確實讓人覺得驚豔。它使用了最基礎的 position-locking 機制，讓車子保持在正中央，並有完全可預期的攝影機動態。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/rallyx_240.gif" style="height: 277px; width: 360px;"><strong>Rally-X © 1980 Namco</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking</strong></em> - 攝影機鎖定在玩家角色的位置<br>
+&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p><span style="font-size:12px;"><strong>注意</strong>：這邊所使用的術語只是為了我自己參考方便，但如果其他人也認為這些術語有用，並能提供改進意見的話，我會很高興的。</span></p></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>西山隆志所設計的《成龍踢館》（Suparutan X / Kung-Fu Master）是另外一個 position-locking 的好例子。他的其他作品包括《Moon Patrol》，以及後來的《快打旋風》。</p>
+<p>這款作品另外使用了一個很基本的機制：edge-snapping。簡單說，當到達關卡盡頭時，攝影機會貼齊場景邊緣，讓玩家可以離開原本所在的錨點。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/kungfu_long_240.gif" style="height: 263px; width: 360px;"><strong>Kung-Fu Master © 1984 Irem</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;">[<em><strong>edge-snapping*</strong></em> - 對攝影機可移動的範圍設下硬性的邊界]<br>
+* edge-snapping 太基本了，每款遊戲都提的話實在太重複，故之後將忽略不提。<br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>Position-locking 雖基本但還是相當好用。對於像《Terraria》這樣的生存冒險遊戲，它視覺上的角色大小、跳躍高度，相對整體畫面來說都很小，因此這方法的效果良好，並能在各方向上提供充足的視野。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 340px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/terraria_240.gif"><br><strong>Terraria © 2011 Re-Logic</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking</strong></em><br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect7" id="sect7"></a></p>
+<p><big><strong>&nbsp;</strong></big></p>
+<p><big><strong>抑制攝影機動態</strong></big></p>
+<p><strong>避免不必要或難以預測的顛簸</strong></p>
+<p>我們如何避免在非必要情形下的攝影機位移？30 年前，捲動畫面帶來了幾個問題：這是很吃 CPU 的運算，因為幾乎整個畫面都要重畫。就算解決了這個問題，巨大的像素顆粒也會讓人覺得捲動很突然。最好的做法就是盡可能不要去捲動畫面。其中一個方法是，讓角色在一特定框框內移動，只有當角色已經推擠到了框框邊緣，才開始捲動畫面。</p>
+<p>《Jump Bug》這款遊戲被很多人視為最早的 platformer，雖然實際上主角會不斷自行跳躍，玩家能操作的只有跳躍高度，以及左右移動。實際上這款遊戲多數的關卡，都是攝影機強制位移，來迫使玩家跟上腳步並閃避障礙，就如同當時大多數的 2D 捲軸遊戲一樣。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/jumpbug_240.gif" style="width: 360px; height: 270px;"><br><strong>Jump Bug © 1981 Hoei/Coreland (Alpha Denshi)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window</strong></em> - 當玩家碰到隱形框框的邊緣時，就移動攝影機位置<br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>但是這個運用於本作最後一關的 camera-window 技巧（譯註：《Jump Bug》這款遊戲不同關卡間有不一樣的攝影機模式，在最後一關變成不是強制移動，如上面 gif 動畫所示），解決了一個當時許多設計者其實根本還沒意識到的問題，而且也為往後數以千計的 platformer 定下了一個標準。但是 camera-window 技巧也引入了一些其他問題，譬如在玩家向著目標前進時，距離螢幕邊緣過近，很難處理突發狀況。</p>
+<p>&nbsp;</p>
+<p>我很喜歡《王者之劍》（Rastan Saga）這款作品，它具備雙軸向的角色移動，且有不止一條前進路徑。本作也算是最早將攝影機動態，與遊戲機制進一步整合的遊戲之一。此處所示的 camera-window 高度正好與角色跳躍同高，所以正常跳躍時不會造成畫面垂直位移，除非主角已經推著框框前進。這排除了攝影機快速上下移動的狀況。</p>
+<p>不過一個很大的問題是，這個方法使得從上方來的敵人很難被注意到，特別是當主角已垂直移動到貼著框框頂部時。另外當向左移動時（在城堡關卡中很常發生），它所預留的視野範圍也很小。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 340px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/rastan_long_240.gif" style="height: 216px; width: 385px;"><br><strong>Rastan Saga © 1987 Taito</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window</strong></em><br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>在近期的遊戲中我們也還能看到 camera-window 的技巧運用。以《Fez》為例，當玩家旋轉場景時，水平的 camera-window 位置會維持住，因為它會特意挑一個讓玩家在旋轉後，仍能保持在框框內的軸心，來進行場景旋轉。《Fez》中的 camera-window 運作方式，算是很少見的，因為要配合如此特殊的遊戲機制，來設計最理想的攝影機方案，這部分我們後面會再提到。垂直向來說，它的攝影機混合了基本的 position-locking，以及 lerp-smoothing 來柔化動態，後者我們也是後面會再描述。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 300px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/fez_2_240_longB.gif" style="height: 214px; width: 384px;"><br><strong>Fez © 2012 Polytron Corporation</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window*（水平方向）</strong></em><br>
+* 在場景立體旋轉時，也會維持住框框位置<br><em><strong>position-locking（垂直方向）</strong></em><br><span style="color:grey;"><em><strong>lerp-smoothing<br>
+region-based-anchors<br>
+manual-control*</strong></em><br>
+* 右類比搖桿可進行額外的畫面平移</span></span><br>
+&nbsp;<br><span style="font-size:12px;"><strong>注意</strong>：<span style="color:grey;">灰色字樣</span>表示這是我們後面才會陸續提到的攝影機控制技巧</span></td>
+</tr></tbody></table><p><a name="sect8" id="sect8"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>歸位</strong></big></p>
+<p><strong>在框框範圍內修正攝影機的偏移</strong></p>
+<p>我們前面討論了如何利用 camera-window 來降低不必要的攝影機移動，但我們也在《Jump Bug》與《王者之劍》兩款遊戲中看到，在玩家偏向假想框框的某側時，這辦法就有一些缺陷。這邊就要來講幾個可以修正它的方式。</p>
+<p>《忍》（Shinobi）大概是我最愛的經典遊戲。在本作中，玩家須要在很多高低差很大的平台間跳躍。它的設計者們想出了一個獨特的攝影機系統：因為角色要在很多平台間上下跳躍，所以垂直方向上的 camera-window 距離很高，而攝影機會被這個垂直向的框框拉著走。在假想框框很高時，產生的問題就是在跳躍之後，角色會被卡在畫面的上緣，使得上方視野狹窄，造成之前《王者之劍》中那樣的問題。在《忍》中，攝影機會慢慢地對齊回主角身上，讓畫面可以聚焦於角色的行動，並將攝影機快速抖動的情況降到最低。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/shinobi_cam.gif" style="height: 270px; width: 360px;"><br><strong>Shinobi © 1987 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-snapping（垂直方向）</strong></em>- 不斷地調整框框偏移，讓角色可以慢慢回到攝影機中央<br><em><strong>camera-window（垂直方向）<br>
+position-locking（水平方向）<br><span style="color:grey;">static-forward-focus</span></strong></em><br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>Platform-snapping 是《超級瑪利歐世界》（Super Mario World）所引入許多技巧中的一項。跟 camera-window 搭配起來的結果就是，當主角還沒碰到框框邊緣以前，攝影機是靜止不動的，但因為瑪利歐終究會跳到下一個平台上，一旦他著地，攝影機會馬上貼齊到他的所在的高度。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 330px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/marioworld_platformsnap_240.gif" style="height: 270px; width: 360px;"><br><strong>Super Mario World © 1990 Nintendo</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong><span style="color:grey;">region-based-anchors</span></strong></em><br><em><strong>platform-snapping*</strong></em> - 玩家角色著地時，攝影機會貼齊到角色所在高度<br><em><strong>camera-window*（垂直方向）</strong></em><br>
+* 在適用的場合下才會發生<br><span style="color:grey;"><em><strong>dual-forward-focus*</strong></em><br>
+* 到達一定臨界才觸發<br><em><strong>manual-control*（水平方向）</strong></em><br>
+* 玩家可手動進行額外的畫面平移</span><br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>本文至此第一次提到宮本茂先生的作品，但後面還會提到很多次。在各種細節上所投注的心血才是成就偉大設計者的關鍵，而不僅僅是有趣的遊戲規則而已。</p>
+<p>&nbsp;</p>
+<p>在初代《雷射超人》（Rayman）裡你也能看到類似的做法。它的 camera-window 幾乎跟畫面高度一樣，所以跳躍時攝影機並沒有上下移動，不過一旦 Rayman 著地，攝影機就會平順地移動過去。將 camera-window 上緣設定成剛剛好超過主角的跳躍高度，這做法就如前面提過的，將攝影機系統整合進遊戲規則的一部分。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 360px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/rayman_5_240.gif" style="height: 263px; width: 360px;"><br><strong>Rayman © 1995 Ubisoft</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>platform-snapping*<br>
+camera-window*（垂直方向）<br><span style="color:grey;">region-based-anchors<br>
+dual-forward-focus*<br>
+lerp-smoothing</span></strong></em><br>
+* 在適用的場合下才會發生<br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>這個技巧在現在也仍然非常管用，在角色跳躍時，攝影機可以保持穩定順暢，僅在跳躍動作結束後，或者 camera-window 被推動時，才去重新定位攝影機。譬如對於近期的《Awesomenauts》 一作中有噴射背包的角色也是一樣，在飛行中時，攝影機只在角色碰到框框上下緣時才移動，並在角色著地後將攝影機歸位。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 370px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/awesomenauts_240.gif" style="height: 217px; width: 390px;"><br><strong>Awesomenauts © 2012 Ronimo Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window（垂直方向）<br>
+platform-snapping<br>
+position-locking（水平方向）</strong></em><br>
+&nbsp;&nbsp;&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect9" id="sect9"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>柔化</strong></big></p>
+<p><strong>避免突然改變攝影機移動的速度與方向</strong></p>
+<p>我們前面提到過周邊視覺的功用，還有它跟舒適感間的關聯性。在古早的年代，因為像素顆粒很大，就算只是很單純的漸進式移動都會看起來像抖動。</p>
+<table style="width: 640px;"><tbody><tr><td style="text-align: center; vertical-align: top; width: 320px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/pixel.jpg" style="height: 200px; width: 200px;"><br><strong>80 年代的像素</strong><br>
+（任天堂主機標準解析度 256x240）</td>
+<td style="text-align: center; vertical-align: top; width: 320px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/pix_grid2.jpg" style="height: 200px; width: 200px;"><br><strong>現在獨立開發者在用的「像素」</strong><br>
+（當中包含複數的實際螢幕像素）</td>
+</tr></tbody></table><p>在現代，我們可以設計漂亮的點繪風格美術，但動態上它們能夠在更為細緻的螢幕像素上移動。而如果你願意不去堅持永遠切齊螢幕像素（pixel-perfect），現代的引擎甚至提供你「次像素」層級的操作。但早年我們被這些粗糙的格子所限時，還能怎樣讓攝影機動起來比較平滑？</p>
+<p><strong>利用（假）物理特性</strong></p>
+<p>（假）物理特性能使 position-locking 攝影機在移動時更為柔和（當然，你可以說所有遊戲引擎算出來的還不都是假的）。</p>
+<p>《小精靈探險》（Pac-Land）應該算得上是第一款比較像現代的 platformer 遊戲，擁有許多後人用以定義此類遊戲的要素，譬如說，在平台間跳躍、避開各式各樣的敵人、撿拾加分物品等等。跟柔化攝影機動態有關的是，主角的速度從每幅 0 格像素，到每幅 1、2、3... 格一路加速，直到角色的最高速度，減速亦同。因為攝影機完全鎖定在角色的位置上，結果就是攝影機的移動也很平順。不過《小精靈探險》不會有畫面垂直捲動的情形，這才是困難的部分，因為角色跳躍與著地時，都是一個很突然的加／減速。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 390px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/pacland_cam.gif" style="height: 281px; width: 360px;"><br><strong>Pac-Land © 1984 Namco</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking<br><span style="color:grey;">static-forward-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p><strong>宮本茂的作品</strong></p>
+<p>在這邊我想向宮本茂先生致敬，並提出一些他的早期作品。他對於遊戲產業的貢獻之大，還有對細節投注的心力之多，絕無誇大。</p>
+<p>1984 年時，他開始嘗試一些 2D 捲軸設計，做出了兩款運用方式截然不同的作品。這兩作中，玩家對於畫面的捲動都沒有什麼控制能力，玩起來更像是前景不動，只是背景不斷平移。</p>
+<table style="width: 640px;"><tbody><tr><td style="text-align: center; vertical-align: top; width: 320px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/Video-Game-Cars-017.jpg" style="height: 260px; width: 300px;"><br><strong>Excitebike © 1984 Nintendo</strong></td>
+<td style="text-align: center; vertical-align: top; width: 320px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/Devil%20World-3.png" style="height: 260px; width: 300px;"><br><strong>Devil World © 1984 Nintendo<br>
+(denied release in North America)</strong></td>
+</tr></tbody></table><p>《越野機車》有著我們熟知的捲軸動態，受機車前進的速度所控制。不過雖然捲動相當流暢，但基本上對遊戲本身沒有實質作用。</p>
+<p>另一方面，《惡魔世界》（Devil World）的遊戲過程就跟畫面捲動很有關係。在這個與《小精靈》雷同的遊戲中，玩家操縱一隻有基督徒身份的龍，對抗會藉著改變畫面捲動方向來壓扁你的惡魔。因為遊戲中信仰符號的運用方式，使得這成為宮本茂唯一一款被禁止在北美上市的作品。雖然說，比起他後來的數多作品，這款被禁應該損失不大吧。然而，多去認識這些大師們成名前的早期作品是很重要的，這更能鼓勵我們多方嘗試──就算是最偉大的藝術家，也是從實驗與不斷失敗中走過來的。</p>
+<p>&nbsp;</p>
+<p>前進一年，《超級瑪利歐兄弟》的傑出表現再怎麼誇大也不為過。遊戲過程上是很簡潔的由左至右單向、水平的前進。另外，遊戲中不允許往回走，套用前面術語的話，可看成是單邊作用的 camera-window。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/mario_cam.gif" style="height: 270px; width: 360px;"><br><strong>Super Mario Bros. © 1985 Nintendo</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>speedup-push-zone</strong></em> - 當在此區間內時，漸漸讓攝影機跟上玩家角色的速度<br><em><strong>camera-window*</strong></em><br>
+* 單邊作用<br><em><strong><span style="color:grey;">static-forward-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>如果瑪利歐從畫面最左邊就一路全速前進，在撞到 camera-window 邊線時，攝影機會在單次畫面更新之間從靜止不動，也變成全速前進，導致整個背景瞬間大幅度捲動，使玩家感到很不舒服。遊戲設計者於是在離 camera-window 邊線約 25% 距離處（譯註：此處距離自畫面左側起算，到 camera-window 線上），訂出另一個假想線，瑪利歐一過此線，攝影機就會開始漸漸加速，而當他碰到 camera-window 邊線同時，攝影機也已跟上速度。</p>
+<p>&nbsp;</p>
+<p>《銀河戰士》也是款奠定一整個遊戲類型基礎的作品，它將 platformer 與大場景探索要素結合在一起。（同期的類似作品《惡魔城》僅有最單純的水平向 position-locking 攝影機）</p>
+<p>《銀河戰士》中包含了垂直與水平方向的關卡（不會同時發生），它也有另一種讓攝影機移動平滑的方式，就是讓主角可以暫時性地跨出假想框框的範圍，同時讓攝影機漸漸加速跟上。主角可以跨出邊線多遠取決於當下的瞬間速度（譯註：是故這個特性在水平方向移動幾乎無法注意到，但是垂直移動時，因為跳躍高度高，落下的坑也深，遊戲也有比較貼近真實的重力加速度，前述的特性才容易觀察到），這個結果也是讓攝影機動態流暢。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/metroid_horiz_240h.gif" style="height: 240px; width: 320px;"><br><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/Metroid_vert_240h.gif" style="margin-top: 3px; margin-bottom: 3px; height: 250px; width: 320px;"><br><strong>Metroid © 1986 Nintendo</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window（水平與垂直方向皆有，但不會同時存在）</strong></em><br><em><strong>speedup-pull-zone </strong></em>- 在玩家跨過 camera-window 邊界時，讓攝影機漸漸加速跟上<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>科技的進步，使像素更細、CPU 更強，也對攝影機設計造成了直接的影響。以前攝影機低速移動時特別明顯，每幾幅畫面可能就會抖動一次。而現今，攝影機移動時，不會再因為低解析度而造成這樣的抖動。</p>
+<p>《超級大金剛》（Donkey Kong Country）也有著不少新穎的攝影機特色，也是以「線性內插法」（簡稱 lerp）來柔化攝影機動態的始祖之一，使得角色跳躍時畫面更流暢，以及 forward-focus 技巧得以派上用場（這點容後再提）。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/donkeykong_2_240c.gif" style="height: 309px; width: 360px;"><br><strong>Donkey Kong Country © 1994 Nintendo (Rare Ltd)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>lerp-smoothing</strong></em> - 以線性內插法不斷縮短攝影機與行動中角色間的距離<br><em><strong>position-locking（垂直方向）<br><span style="color:grey;">region-based-anchors<br>
+dual-forward-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>Lerp-smoothing 聽起來不是什麼了不起的事，但它現在已經變成柔化攝影機動態（特別是角色跳躍相關）的標準手法。</p>
+<div><div id="highlighter_959610" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp color1 bold">float</code> <code class="cpp plain">lerp (</code><code class="cpp color1 bold">float</code> <code class="cpp plain">a, </code><code class="cpp color1 bold">float</code> <code class="cpp plain">b, </code><code class="cpp color1 bold">float</code> <code class="cpp plain">t)</code></div><div class="line number2 index1 alt1"><code class="cpp plain">{</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">a + t * (b - a);</code></div><div class="line number4 index3 alt1"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div><p>
+這大概是最有效且普及的動態柔化技巧，不論對緩慢或快速移動的角色（如 Super Meat Boy）都很有用。然而，對於特別大隻又移動很快速的角色，這方法有可能會讓攝影機無法在角色碰到畫面邊緣前跟上，同樣造成反應時間過短的問題。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/supermeatboy_240.gif"><br><strong>Super Meat Boy © 2010 Team Meat</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>lerp-smoothing<br>
+position-locking</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Never Alone》於 2014 年推出，是一款很美妙的作品。主要來說，它的柔化技巧同時考慮到了攝影機的既有速度，雖然意味著它的動態起步略慢，偶爾也會超過原本的目標位置，但這樣的結果是一種舒緩而且有機的動態，只是對於快速的玩家操作會顯得遲鈍一些。本作所用到的很多其他技巧，後文也會再陸續介紹。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/neveralone_240_2.gif"><br><strong>Never Alone © 2014 Upper One Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>physics-smoothing</strong></em> - 攝影機具有物理特性，不斷追蹤目標物移動<br><em><strong><span style="color:grey;">position-averaging<br>
+cinematic-paths<br>
+region-based-anchors<br>
+cue-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>用程式術語來講，線性內插代表的意義是「漸出」（EaseOut），而 physics-smoothing 則是「漸入再漸出」（EaseInOut）。可以的話，請自行查查 SmoothDamp 程式方法的細節（譯註：此指 Unity API），或自己刻一個同時考量目標物距離與既有速度的實作方式。</p>
+<p>&nbsp;</p>
+<p>另外，如果你正使用切齊像素為考量的 shader，你會發現你的 2D 貼圖偶爾會位移了 1 格像素，而與其他貼圖或背景產生預料外的偏差，肇因來自程式除法的不一致性。</p>
+<p>《Hyper Light Drifter》使用了巧妙的方法，讓它在低解析度點繪風格狀況下，還能很平順地捲動畫面。它將打算呈現的內容，先畫到一張「切齊遊戲內像素的畫布」上，然後再以「切齊螢幕像素」的方式來調整畫布偏移，也就是用實際座標除以遊戲像素大小後所剩的餘數，來決定要偏移多少螢幕像素。本作還實作了其他我們後面會再講到的有趣技巧。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/HLD_180.gif" style="height: 241px; width: 360px;"><br><strong>Hyper Light Drifter © [Release TBA] Heart Machine</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>physics-smoothing*</strong></em><br>
+* 遊戲邏輯上的解析度僅有 480x270，但攝影機畫面捲動則使用完整的螢幕解析度<br><em><strong><span style="color:grey;">region-based-anchors<br>
+target-focus<br>
+cue-focus<br>
+gesture-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect10" id="sect10"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>構圖</strong></big></p>
+<p><strong>將重要的東西保留在畫面上</strong></p>
+<p>自動捲軸的做法不在本文討論範圍，因為按照定義，玩家完全對畫面捲動沒有決定權。但是，我們可以參考這類作品中玩家角色的位置，以及如何做到對來自前方的危險，與來自後方的危險都能保留適度反應時間的平衡。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/scramble_240.gif" style="height: 317px; width: 320px;"><br><strong>Scramble © 1981 Konami</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>auto-scroll</strong></em> - 玩家無法控制畫面的捲動（但擁有角色在畫面中移動的完全控制權）<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>如同我們在《小精靈探險》中看到的，將攝影機與主角動態綁定同時，你也可以將攝影機聚焦於主角前方一段距離。這讓玩家有足夠的前方視野，而在後方也還有一小段反應的空間，更重要的，它也對前進方向有指引的作用，因為前進時，我們慣於朝畫面中央來集中注意力。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/pacland_cam.gif" style="height: 281px; width: 360px;"><br><strong>Pac-Land © 1984 Namco</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking<br>
+static-forward-focus</strong></em> - 對遊戲主要的前進方向分配比較大的視野空間<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>再講更早期一些，1981 年所推出的《Defender》領先時代許多，可說是一款啟發了後世整個遊戲類別的射擊遊戲。它所呈現出的雙向 forward-focus 系統，幾乎沒有被人注意到。在遊戲中，攝影機總是會試著聚焦於距離主角機前方約 25% 螢幕寬的一個假想點上。這個系統很適用於快節奏，且隨著玩家面向方向改變，敵人有可能從任一側出現的遊戲。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/defender_240.gif"><br><strong>Defender © 1981 Williams Electronics</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>dual-forward-focus</strong></em> - 玩家面向的方向會改變攝影機焦點，讓前進方向上一直保有足夠的視野<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《龍鳳神偷》（Bonanza Bros.）是一款 Sega 在 1990 年推出於大型機台上的歡樂向 2D 捲軸遊戲。遊戲中有分割畫面的系統，讓玩家可以雙人合作搶銀行。</p>
+<p>在這樣的遊戲中，提供清楚的前方視野相當重要，所以它也有實作了 dual-forward-focus 系統。但是，它的攝影機會以比較緩慢的方式切換到新的焦點上，使得整體動態更柔和。切換焦點的速度大約是玩家角色速度的兩倍，而且當玩家角色有移動時，攝影機才移動，如下圖中紅色角色的行動。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/bonanza2_240.gif" style="height: 266px; width: 360px;"><br><strong>Bonanza Bros. © 1990 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>dual-forward-focus*</strong></em><br>
+* 焦點切換的速度是基於玩家移動的速度<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>接下來這個《超級瑪利歐世界》中的攝影機技巧，是我最喜歡的 2D 攝影機運用之一，因為它與特定的遊戲規則細節配合得相當細膩。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/marioworld_3_240b.gif" style="height: 306px; width: 360px;"><br><strong>Super Mario World © 1990 Nintendo</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong><span style="color:grey;">region-based-anchors</span><br>
+platform-snapping*</strong></em> - 玩家角色著地時，攝影機會聚焦到角色所在位置<br><em><strong>camera-window*（垂直方向）</strong></em><br>
+* 在適用的場合下才會發生<br><em><strong>dual-forward-focus*</strong></em><br>
+* 到達一定臨界才觸發<br><em><strong><span style="color:grey;">manual-control*（水平方向）</span></strong></em><br><span style="color:grey;">* 玩家可手動進行額外的畫面平移</span><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>如同前面，畫面上有兩個錨點，讓玩家不論面向哪方，都可以有足夠多的前方視野。但，當玩家開始回頭走的時候（在《超級瑪利歐世界》中非常容易發生），攝影機仍會保留原先的焦點，直到瑪莉歐回頭走到一定的臨界位置，攝影機才會切換焦點。這在本作中時常左右來回移動的情況下，可以降低需要突然切換攝影機方向的頻率。</p>
+<p>&nbsp;</p>
+<p>更近期，《洞窟物語》一作中使用的 dual-forward-focus 技巧，是依照角色移動速度，將焦點慢慢移動到另一側。與《龍鳳神偷》雷同，但是這邊的攝影機是不論玩家有沒有在動，它都會移向新的錨點，不過玩家移動時，攝影機跟上的速度也會加快。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/cave_240.gif" style="height: 270px; width: 360px;"><br><strong>Cave Story © 2004 Studio Pixel</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking（垂直方向）<br>
+dual-forward-focus<br>
+physics-smoothing</strong></em><br><span style="color:grey;"><em><strong>manual-control*</strong></em><br>
+* 玩家可手動進行額外的畫面垂直移動</span><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《光速兔崽子2》（Jazz Jackrabbit 2）是 Epic Games 早期所做的一款傑出 platformer。本作有一個很獨特的攝影機要素：基於玩家輸入的方向（不論垂直或水平方向），遊戲會沿著該方向將攝影機從主角身上移開。</p>
+<p>我將這種表現方式稱為 target-focus，也就是玩家的輸入，會使得攝影機直接往他們所期望的目標或方向進行偏移。例如，當你往左走的時候，你會希望看到更多左側視野。當玩家放開方向鍵同時，焦點才移回主角身上。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/jazzjackrabbit_240_2.gif" style="height: 270px; width: 360px;"><br><strong>Jazz Jackrabbit 2 © 1998 Epic Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>lerp-smoothing（垂直方向）</strong></em><br><em><strong>target-focus</strong></em> - 攝影機會依照玩家操作的方向，直接聚焦於前方視野<br>
+* 搖桿或方向鍵會將焦點推往所期望的方向<br><span style="color:grey;"><em><strong>[manual-control*]</strong></em><br>
+* 本作中的垂直向 manual-control 屬於 target-focus 的延伸</span><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>更直白的視覺目標物當然也可以用 target-focus 手法來呈現，譬如說那些也需要游標操作遊戲。在《Snapshot》中，你用滑鼠來對場景上的一小部分進行快照，並把這些拍下來的畫面用在其他地方來解謎。游標本身就是你的視線方向，所以攝影機的焦點就設定在游標跟玩家角色之間的中點。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 380px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/snapshot_240_3.gif" style="height: 209px; width: 375px;"><br><strong>Snapshot © 2012 Retro Affect</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>target-focus*</strong></em><br>
+* 焦點位於主角與游標之間的中點<br><em><strong>lerp-smoothing</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《The Swapper》的 target-focus 運用中，主角的瞄準點即代表了玩家的視線方向，可以用做攝影機焦點。這對所有須要額外進行武器瞄準的遊戲都很有用。玩家甚至可以一邊瞄準一邊後退，這帶出了更多變化的攝影機行為，當然也就須要更多的攝影機操作機制。本作有更多先進的攝影機運用，我們之後會再講到。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/swapper_240.gif" style="height: 215px; width: 390px;"><br><strong>The Swapper © 2013 Facepalm Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>target-focus<br>
+physics-smoothing<br><span style="color:grey;">region-based-anchors<br>
+cue-focus<br>
+cinematic-paths</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>遊戲《Secrets of Rætikon》中的攝影機也有許多特別的功能。從基本的畫面構圖角度來看，他使用了 projected-focus 技巧，基於主角移動的方向與速度，來對角色接下來可能的位置做簡單的預測。</p>
+<p>要注意這個技巧並不適用於 platformer 遊戲，特別在垂直方向上。因為外插法無法預期跳躍與著地瞬間的狀況。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/secretsofraetikon_2_240b.gif" style="height: 226px; width: 380px;"><br><strong>Secrets of Rætikon © 2014 Broken Rules</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>projected-focus</strong></em> - 攝影機跟隨主角的預期位置（用外插法求得）來移動<br><em><strong>physics-smoothing</strong></em><br><span style="color:grey;"><em><strong>cue-focus*</strong></em><br>
+* 根據吸引子（attractor）來調整位置與縮放程度<br><em><strong>gesture-focus*</strong></em><br>
+* 特定操作會觸發預設的攝影機行為，例如飛行時畫面會拉遠<br><em><strong>cinematic-paths</strong></em></span><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Luftrausers》整合了數個很有趣的攝影機特色，包括主角機指向的方向（target-focus），主角機實際漂移的方向（projected-focus），還有一些其他畫面提示，譬如說水面、戰艦、子彈等等會在近距離時吸引攝影機焦點的東西（cue-focus，詳後述）。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/luft_4_240.gif"><br><strong>Luftrausers © 2014 Vlambeer</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>target-focus / projected-focus<br>
+physics-smoothing<br><span style="color:grey;">cue-focus</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect11" id="sect11"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>導演工作</strong></big></p>
+<p><strong>設定場景上的提示物、提供遊戲背景與進展方向</strong></p>
+<p>到目前為止，我們討論了如何呈現視野、適合的操作方式，以及大體上來說，玩家想看的東西（最前面提過的「互動性」）。我們也提到了各種讓畫面看起來順暢的不同方法（舒適感）。</p>
+<p>但是我們身為遊戲的導演，為了連貫性、遊戲進展、戲劇張力以及敘事手法等等，當然也需要讓玩家的注意力，放在我們要給他們看的重要事物上。</p>
+<p>《神奇男孩》（Wonder Boy）是另一款我很喜歡的遊戲，他是一款快節奏的 platformer，遊戲只使用很單純的單邊 camera-window 讓玩家不斷前進。它雖然沒有用上《超級瑪利歐兄弟》中使用的 speedup-push-zone 來柔化攝影機的加速，但是他用到了另一個我稱之為 camera-path 的技巧。攝影機的移動方向會提供玩家對於關卡或接下來的挑戰的暗示。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/wonderboy_cam.gif" style="height: 304px; width: 360px;"><br><strong>Wonder Boy © 1986 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-path</strong></em> - 在關卡中使用預設好的攝影機前進路徑<br><em><strong>camera-window*</strong></em><br>
+* 單邊作用<br><em><strong>static-forward-focus</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>第五世代的家用主機們，如 Playstation 與 N64 等（註），因更強大的硬體與真 3D 概念的出現而帶來新的表現能力。3D 攝影機技巧是一個得另闢專題討論的龐大主題，但 3D 技術也對 2D 遊戲設計產生很重大的影響。設計者可以運用縮放、傾斜，或者將 2D 與 3D 結合而成我們現在所說的「2.5D」，也就是遊戲在三維空間中的二維平面上進行。</p>
+<p>PS 遊戲《風之少年》（Klonoa）就是這類遊戲其中之一。玩家有基本的 2D 操作，但是遊戲實際上是在一個精心設計過的 3D 世界當中。本作中的攝影機跟隨 3D 的 camera-path 前進，提供方向指引與遊戲敘事的細節。攝影機會在所有關卡中適時定位、傾斜、縮放與 forward-focus，以及跳躍時機的提示等等。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/klonoahd_240.gif" style="height: 259px; width: 360px;"><br><strong>Klonoa: Door to Phantomile © 1997 Namco</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-path*</strong></em><br>
+* 路徑指引。包括縮放與傾斜效果。<br><em><strong>camera-window（垂直方向）<br>
+lerp-smoothing<br>
+dual-forward-focus</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>這些攝影機操作給了我們豐富的手法來進行遊戲中的暗示、驚喜與警告。在《風之少年》中，當攝影機拉遠來讓魔王登場的時候，你就清楚接下來該做什麼了。</p>
+<p>（註）Odyssey 為初代、Atari 2600 同期為二代、任天堂同期為三代、超任等 16bit 主機為四代、32bit/64bit 與 3D 遊戲主機的初始世代為第五代。2013 年起推出的 PS4、Xbox One 等被歸類為第八世代。</p>
+<p>&nbsp;</p>
+<p>《超級大金剛》引入了一個後來被各 platformer 大量使用的特色：遊戲設計者會根據各個關卡，甚至是關卡中特定區域的內容不同，來改變攝影機的行為。在快節奏、跑酷風格的區域，會需很寬敞的前方視野，必須犧牲後方空間；但一些以探索為主的區域，就須要兩側都有足夠的視野。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/donkeykongcountry_1_240b.gif" style="height: 281px; width: 320px;"><br><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/donkeykong_2_240b.gif" style="margin-top: 3px; margin-bottom: 3px; height: 274px; width: 320px;"><br><strong>Donkey Kong Country © 1994 Nintendo (Rare Ltd)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>lerp-smoothing<br>
+position-locking（垂直方向）</strong></em><br><em><strong>region-based-anchors</strong></em> - 不同區域（甚至同一關卡中）攝影機位置與焦點的錨點也會不同<br><em><strong>dual-forward-focus</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>如《風之少年》中所見的，用來呈現 3D 場景的技術，也是我們用以指引玩家的工具，譬如縮放或推拉的運鏡。縮放是改變攝影機視角（Field of View），推拉則是攝影機對著目標物前後移動的術語。雖然實際操作不同，譬如說推拉一般會提供更強烈的身歷其境的感覺，但他們都達到畫面重新構圖的效果。要瞭解更多的話，可以自行去查詢攝影運鏡的知識，但在此為了簡化說明，我們後面會統稱這兩個技巧都叫 zoom-to-fit。</p>
+<p>以《耀西的故事》（Yoshi's Story）為例，畫面構圖上將耀西、魔王跟柱子都做了適當的呈現，讓目標與場景盡頭等要素都能被玩家注意到。攝影機不單純只是跟隨這些物體移動，甚至也會拉遠鏡頭來提供玩家必要的資訊。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/yoshi_240.gif" style="height: 275px; width: 360px;"><br><strong>Yoshi’s Story © 1997 Nintendo (N64)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>zoom-to-fit</strong></em> - 改變縮放或前後移動攝影機來呈現重要的物件<br><em><strong>dual-forward-focus<br>
+camera-window（垂直方向）<br>
+platform-snapping<br><span style="color:grey;">manual-control</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Insanely Twisted Shadow Planet》裡面的攝影機系統後來也影響了很多其他遊戲，它會參考玩家的速度（projected-focus）、目標的位置（target-focus），及更重要的，大概也是首批使用吸引子（attractor）來使玩家聚焦於特定物體的遊戲之一。你可以查閱本作的<a href="http://michelgagne.blogspot.tw/2012/07/itsp-camera-explained.htm" target="_blank">開發紀錄文章</a>來瞭解更多細節。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/itsp_240.gif" style="height: 325px; width: 360px;"><br><strong>Insanely Twisted Shadow Planet © 2011<br>
+Shadow Planet Productions</strong><br>
+以上畫面截自 Shadow Planet Productions 的部落格文章：<a href="http://www.google.com/url?q=http%3A%2F%2Fmichelgagne.blogspot.com%2F2012%2F07%2Fitsp-camera-explained.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEaBqw21c0H-4qjDgd1f3RGGUbJzg" target="_blank">ITSP Camera Explained</a></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>cue-focus*</strong></em> - 畫面焦點會受遊戲世界中的提示物（吸引子）影響<br>
+* 攝影機位置與縮放是根據雙環吸引子來設定，這些吸引子包括敵人或檢查點等等<br><em><strong>projected-focus<br>
+target-focus<br>
+physics-smoothing</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/Screen%20Shot%202015-04-09%20at%2010.35.33%20AM.jpg" style="margin: 10px 20px; height: 222px; width: 190px; float: left;"></p>
+<p>&nbsp;</p>
+<p>本作的雙環吸引子作用於敵人或檢查點週遭。在外環時，攝影機會漸漸被拉到物體上，拉動的程度以權重平均計算後得知。當進到內環時，主角的權重會被完全忽略，攝影機會單獨鎖定在提示物身上。不同的物體的內外環設定也不盡相同，甚至可以互相重疊，讓焦點可以從前一個吸引子，順暢地轉移到另一個吸引子上。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="line-height: 1.538em;">我們有各種的手法可以吸引注意力，但環狀吸引子是當中一個很好的做法。這也可以用來反向操作：使用排斥子（detractor）讓攝影機從某遊戲物件上移開。這可能是帶來懸疑感，或隱藏秘密要素時可善加利用的手法。</span></p>
+<p>&nbsp;</p>
+<p>《Aether》是 Edmund McMillen 與 Tyler Glaiel 在 2008 年所製作的一款 Flash 遊戲，它也引入了一個特殊的提示手法：在玩家漂流在太空中時若接觸到星球的重力場，畫面會漸漸轉向那個重力來源。這有提供安全感與方向指引的效果，因為「往下走」終究可以碰到地表。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/aether_240.gif" style="height: 346px; width: 360px;"><br><strong>Aether © 2008 Armor Games<br>
+(Edmund McMillen, Tyler Glaiel)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>cue-focus*</strong></em><br>
+* 攝影機會漸漸旋轉到朝向重力來源<br><em><strong>position-locking<br>
+lerp-smoothing</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>針對攝影機系統的討論，若沒有提到《Limbo》就不能算得上完整。透過控制曝光程度、攝影機位置與縮放，本作呈現出的整體氣氛非常獨特。在《Limbo》中，每個區域都有個別的攝影機特徵、錨點等等，同時，特定物體，譬如說敵人身上，也會帶有吸引子等攝影機的提示。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/limbo_240.gif" style="height: 220px; width: 390px;"><br><strong>Limbo © 2010 Playdead</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 攝影機的縮放、位置以及曝光程度<br><em><strong>position-locking*</strong></em><br>
+* 每個區域不同<br><em><strong>cue-focus*</strong></em><br>
+* 特定動作會觸發提示物，譬如說敵人出現攻擊時等等。<br><em><strong>physics-smoothing</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>另一個簡單但有效的做法是 region-focus，譬如說在《Geometry Wars》就有用上。它結合了主角機的位置，與關卡正中央的位置，這代表整個畫面會以一半的速度來跟著主角機的方向移動。玩家只須略為觀察主角機與畫面中心的偏移，就可以知道自己在關卡中的位置。這個系統對於封閉式的小型關卡非常有效，尤其是危險通常容易聚集在畫面中央的時候。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/geometrywars_240.gif"><br><strong>Geometry Wars © 2003 Bizarre Creations</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-focus*</strong></em> - 聚焦於區域錨點（譬如關卡正中央），同時也參考玩家的位置<br>
+* 攝影機位置是主角機位置與關卡正中央的平均<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Vessel》是一個經典的解謎遊戲，玩家同時需要注意到場景上的好幾個元素，來解開以流體為主的謎題，因此攝影機區域的設定就相當重要。就像在《Geometry Wars》中那樣，本作的設計者將區域錨點的權重增加，讓玩家解謎時攝影機接近靜止。這是一個古早時期單房間解謎遊戲的重新詮釋，只是在《Vessel》一作中，房間的概念更為彈性，有著更多變的大小與特徵。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/vessel_240.gif" style="height: 215px; width: 390px;"><br><strong>Vessel © 2012 Strange Loop Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-focus*</strong></em><br>
+* 攝影機位置大體上會停在區域錨點，但隨著玩家移動會有一點點偏移<br><em><strong>region-based-anchors*</strong></em><br>
+* 不同的區域有著不同的錨點位置與縮放程度<br><em><strong>cue-focus<br>
+physics-smoothing<br><span style="color:grey;">cinematic-paths</span></strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>在《Vessel》中最巧妙的概念就是，就算被限制在一個區域中，攝影機還是可以跟著玩家移動少許。這在一個封閉空間中，仍提供了很強的主控感。再者，當玩家解開謎題，離開區域之前，攝影機已朝著下一區域開始移動，降低切換區域時，攝影機突然加速的感覺。</p>
+<p>&nbsp;</p>
+<p>另一個讓攝影機產生畫面張力、吸引目光的手法，是讓玩家的行為去觸發既定的攝影機運鏡。《野生兒大冒險》（Tomba）是早期 Playstation 的 2.5D 作品中還蠻有趣的一款，通常攝影機是筆直向前拍攝，但在玩家進行某些動作，譬如說攀爬，或玩家在不同深度間切換時，它會稍為偏到另一個角度。當攝影機角度偏移時，會帶來特殊的操作體驗，同時也可以讓玩家看到更多的前方視野。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/tomba_240_2.gif" style="height: 270px; width: 360px;"><br><strong>Tomba! © 1997 Whoopee Camp</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>gesture-focus*</strong></em> - 遊戲機制上所觸發的攝影機運鏡<br>
+* 攝影機角度偏移以更清楚反應玩家狀態<br><em><strong>dual-forward-focus（水平方向）<br>
+platform-snapping<br>
+camera-window（垂直方向）</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>遊戲機制所觸發的攝影機運鏡可以有很多運用的方式──不同的移動方式跟軸向、反應式或預測式的等等。對於玩家與攝影機間行為的互動關係，我相信我們現今也只碰到了皮毛而已。</p>
+<p>&nbsp;</p>
+<p>在即將推出的動作遊戲《Aztez》中，我們可以看到 gesture-focus 技巧的潛力。它運用了不同的攝影機運鏡技巧，例如縮放（推拉）或傾斜，來強化畫面張力，並提示如近身戰或者終結技等特定事件。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/aztez_240.gif" style="height: 216px; width: 385px;"><br><strong>Aztez © [Release TBA] Team Colorblind</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>gesture-focus*</strong></em><br>
+* 遊戲中的行動會觸發攝影機縮放（推拉）或傾斜<br><em><strong>position-locking（垂直方向）<br>
+lerp-smoothing<br>
+zoom-to-fit</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>在 Sega 推出的經典動作遊戲《格鬥三人組》（Streets of Rage，又譯《怒之鐵拳》）中，攝影機是用單邊 camera-window 的方式跟著玩家前進，這在 2D 橫向動作遊戲中算很基礎。但是，攝影機在許多特定狀況下，會移到原本的畫面外（離開玩家所在），來呈現額外的敘事表現及戲劇要素。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/streetsofrage_240.gif"><br><strong>Streets of Rage © 1991 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>cinematic-paths</strong></em> - 攝影機暫停平常的功能，來呈現「畫面外」的背景敘事<br><em><strong>region-based-anchors<br>
+camera-window*</strong></em><br>
+* 標準的 2D 橫向動作遊戲行為：單邊作用的 camera-window，且只在非戰鬥狀態有效<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>這個系統很強而有力，讓設計者可以在不切換畫面的情況下，提供電影式的停頓點，如同融入在遊體本體內的過場動畫。</p>
+<p>&nbsp;</p>
+<p>Cinematic-path 手法在 The Behemoth 所推出的《Alien Hominid》與《城堡毀滅者》中被運用得很好。在遊戲中的很多地方，操作會暫時失效，讓攝影機可以移動到登場魔王或其他劇情要素上。這達到了兩個目的──在不讓玩家失去遊玩焦點的前題下，提供敘事內容，以及指引前進的方向。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/alienhominid_240.gif" style="height: 218px; width: 390px;"><br><strong>Alien Hominid © 2004 The Behemoth</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors<br>
+cinematic-paths<br>
+camera-window*</strong></em><br>
+* 標準的 2D 橫向動作遊戲行為：單邊作用的 camera-window，且只在非戰鬥狀態有效<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect12" id="sect12"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>多焦點攝影機</strong></big></p>
+<p><strong>同時聚焦在數個物體之上</strong></p>
+<p>如前面所見，就算焦點物體只有一個，要做好都已相當不容易。那當玩家或目標不只一個的情況下，我們要怎樣處理？</p>
+<p>《聖鎧傳說》（Gauntlet）是一款具突破性的爬地城遊戲，在當時來說，不論是遊戲設計或運用的技術方面都相當先進。在畫面上同時有多位玩家的情況下，遊戲會將攝影機位置放在所有人的平均點上。然而，除非所有玩家都往同個方向走，當玩家之間的距離跟畫面大小一樣時，就沒有人可以移動了。如果某個玩家離開時，他的角色沒有退出遊戲，其他人就會因為無法推動畫面邊界而被卡死。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/gauntlet_2_240.gif" style="height: 219px; width: 390px;"><br><strong>Gauntlet © 1985 Atari Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-averaging</strong></em> - 聚焦在所有目標物的位置平均處<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Samurai Gunn》使用了類似的技法，但是為了製造場上的混亂感，遊戲中採取了幾點極端手法。譬如，故意加上畫面暫停與瞬間黑邊來強化視覺效果。當玩家很頻繁地重生或傳送時，平均位置也馬上會偏移，導致畫面焦點隨時都在變。甚至，連最基本的 edge-snapping 都拿掉了，讓畫面可以超過場景邊界。這些對營造遊戲氣氛很有用，但是也容易造成視覺舒適感下降，特別是針對遊戲的圍觀者而言。對於本作的遊戲操作來說，很自然地必須要讓玩家可以穿過畫面邊界（從另一邊出現），而不會被卡住，雖然這個做法並不常見。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/samuraigunn_240_3.gif" style="height: 265px; width: 360px;"><br><strong>Samurai Gunn © 2013 Teknopants</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-averaging<br>
+lerp-smoothing<br><del>edge-snapping*</del></strong></em><br>
+* 為了達到大混戰的氛圍，甚至將 edge-snapping 特性給拿掉了，所以畫面幾乎無時無刻都在晃動<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>另一個做法可以在古早的《快打旋風》（以及後來相關系列作）中找到。基本上遊戲使用水平的 camera-window 系統，讓畫面盡可能穩定。就如同每個 camera-window 案例一樣，撞到框框邊線的玩家會一併推動攝影機。當攝影機移動時，可能會連帶一起推著另一個玩家移動，讓兩者都能保持在框框內。攝影機（跟兩個玩家）只有在兩個人同時相反方向推動 camera-window 時，才會被卡住。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/streetfighter_240.gif" style="height: 268px; width: 360px;"><br><strong>Street Fighter © 1987 Capcom</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>camera-window*</strong></em>（水平方向）<br>
+* 撞到框框邊線會推動攝影機，也可能同時一起推動另一個角色<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>另一款重新定義多人同樂的系列作品，就是任天堂的《明星大亂鬥》。就算是該系列中的第一款遊戲，都有非常傑出的攝影機系統。遊戲中畫面會以所有人的平均位置為中心，當玩家距離越遠時，就將畫面拉遠來容納所有角色。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/supersmash_240_2.gif" style="height: 248px; width: 360px;"><br><strong>Super Smash Bros. © 1999 Nintendo (HAL Laboratory)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>zoom-to-fit<br>
+position-averaging*</strong></em><br>
+* 嚴格上來說是「看向」所有人的平均點，因為遊戲為 3D 場景，又攝影機本身沒有移動而是轉向<br><em><strong>lerp-smoothing</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>現今這個作法仍然相當好用，在《ROCKETSROCKETSROCKETS》一作中，它還有著雙重目的：其一當然是讓玩家們都出現在畫面上，其二則是將玩家們導向畫面中心，鼓勵玩家進行近身作戰。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/rrr_240.gif" style="height: 212px; width: 385px;"><br><strong>ROCKETSROCKETSROCKETS © 2014 Radial Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>zoom-to-fit<br>
+position-averaging</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>如同在前面提過的《Never Alone》，不論是單人遊戲或多人遊戲，你都可以對任一組角色的位置計算平均點，有時也能加上不同的權重。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/neveralone_240_2(1).gif" style="height: 215px; width: 390px;"><br><strong>Never Alone © 2014 Upper One Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>physics-smoothing<br>
+position-averaging<br>
+cinematic-paths<br>
+region-based-anchors<br>
+cue-focus</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Spelunky》採取了不一樣的手法來處理不同目標物位置上的衝突。遊戲同一時間只會聚焦在一個角色身上。如果玩家死亡，掌旗者就會換人。這其實也變成了遊戲規則中的一個要素，對掉出畫面外的玩家進行死亡倒數。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/spelunky_mp_240.gif" style="height: 215px; width: 390px;"><br><strong>Spelunky © 2008-2012 Mossmouth (Derek Yu)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking<br>
+lerp-smoothing</strong></em><br><span style="color:grey;"><em><strong>[manual-control*]</strong></em><br>
+* 上／下鍵可以垂直移動攝影機 &nbsp;</span></span></td>
+</tr></tbody></table><p><a name="sect13" id="sect13"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>手動操控</strong></big></p>
+<p><strong>讓玩家有別的方法來控制攝影機</strong></p>
+<p>在某些狀況下，設計者可能得要視玩家需求來提供額外的攝影機控制能力。直白的做法就是將攝影機綁定到玩家操作上。</p>
+<p>《超級瑪利歐世界》又是最早加入這類攝影機操作的遊戲之一。ＬＲ鍵各自可以讓攝影機往不同方向移動，但是雖然這感覺好像很有用，不過實際上的評價是這還蠻雞肋的，甚至大部分玩家根本就不知道有這個功能。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/marioworld_3_240b(1).gif" style="height: 306px; width: 360px;"><br><strong>Super Mario World © 1990 Nintendo</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors<br>
+platform-snapping*&nbsp;<br>
+camera-window*（垂直方向）</strong></em><br>
+* 在適用的場合下才會發生<br><em><strong>dual-forward-focus*</strong></em><br>
+* 到達一定臨界才觸發<br><em><strong>manual-control*（水平方向）</strong></em><br>
+* 玩家可手動進行額外的畫面平移<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>本作中攝影機手動操作的問題，原因正是它一點也不直覺。基礎的角色移動操作與ＬＲ鍵之間沒有任何關聯性。</p>
+<p>&nbsp;</p>
+<p>攝影機手動操作比較直覺的例子，可以來看看《Osmos》。當然這通常不被歸類為 2D 捲軸遊戲，但《Osmos》用了很自然的方式來控制攝影機。不論是桌機版本的滑鼠滾輪，或是平板電腦上使用縮放手勢，都提供了操作方式與攝影機間更清楚的聯結。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/osmos_240.gif"><br><strong>Osmos © 2009 Hemisphere Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking<br>
+manual-control*</strong></em><br>
+* 滑鼠滾輪 / 觸控縮放手勢可以改變攝影機縮放<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>前面也提過的《光速兔崽子2》當中，遊戲所提供的攝影機垂直位移操作，與攝影機在角色快速橫向移動時的行為可以類比，因此這樣的操作也更容易被聯想到。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/jazzjackrabbit_240_2(1).gif" style="height: 270px; width: 360px;"><br><strong>Jazz Jackrabbit 2 © 1998 Epic Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>lerp-smoothing（垂直方向）<br>
+target-focus&nbsp;</strong></em><br>
+* 搖桿或方向鍵會將焦點推往所期望的方向<br><strong><em>[manual-control*]</em></strong><br>
+* 本作中的垂直向 manual-control 屬於 target-focus 的延伸<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>如果手動操作是必要的狀況下，記得重複利用意義類似的按鍵，譬如說《Spelunky》中，蹲下跟抬頭就會改變攝影機的位置。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/spelunky_crouch2_240_2.gif" style="height: 212px; width: 390px;"><br><strong>Spelunky © 2008-2012 Mossmouth (Derek Yu)</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking<br>
+lerp-smoothing<br>
+[manual-control*]</strong></em><br>
+* 上／下鍵可以垂直移動攝影機<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect14" id="sect14"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>畫面晃動效果</strong></big></p>
+<p><strong>象徵玩家失去主控權的戲劇效果</strong></p>
+<p>在前面這些案例研究中我們可以發現到，提供一個清楚明白的攝影機操作，會帶給玩家一種與畫面中虛擬世界結合的同步感。反向操作亦然：利用攝影機與畫面的晃動，來暫時打斷攝影機與玩家操作的關聯，可以提供一種畫面張力，代表存在著比玩家還強而有力的事物。</p>
+<p>在我調查到底是哪一款作品最先開始引入畫面晃動時，很不意外地，線索又指向了一款宮本茂大師的作品，也就是 1983 年最早的《瑪利歐兄弟》（譯註：俗稱《水管瑪利歐》）。不過可能是因為硬體規格或製作時程上的問題，這個晃動效果似乎並非所有版本中都有。（註）</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/marioshake_240.gif"><br><strong>Mario Bros. © 1983 Nintendo</strong></td>
+</tr></tbody></table><p>（註）在翻譯文本發佈的前夕，我仍在與 Itay 討論這點，因為在與 Kun-Wei 校稿時發現，水管老馬的各種版本（or 可能單純是關卡不同？）晃動效果不太一樣，有看起來畫面有兩層的，有看起來畫面只有一層的，撞 POW 時有會上下晃的，甚至有會左右晃的... 但 Itay 很確定他有看過撞 POW 時不會晃的版本。</p>
+<p>畫面晃動（或是暫停，也有類似的意思）已被用於無數款遊戲作品，特別是所有 Vlambeer 所推出的遊戲上頭。請參考 Vlambeer 的遊戲設計者 JW（Jan Willem Nijman）<a href="http://www.youtube.com/watch?v=AJdEqssNZ-U" target="_blank">對此侃侃而談的影片</a>。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/supercratebox_240.gif"><br><strong>Super Crate Box © 2010 Vlambeer</strong></td>
+</tr></tbody></table><p><a name="sect15" id="sect15"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>量身打造</strong></big></p>
+<p><strong>綜各家之長，為你的遊戲調校最適合的攝影機系統</strong></p>
+<p>要做出一款遊戲所需的專注力與細節相當可觀。就如其他所有要素一般的，攝影機系統也值得你花下功夫去設計。在你想著使用預設的攝影機就好之前，先試著描述一下你覺得你遊戲中的攝影機到底該怎麼運作。</p>
+<p>在我製作我自己的遊戲時（最後也導致我進行了這一大堆調查），認知到以下幾點是蠻有用的基本原則：</p>
+<ul><li>找到你遊戲中獨特、顯著的特色</li>
+<li>試著找出其他面臨過類似設計挑戰的作品</li>
+<li>想辦法內化你所參考的設計</li>
+</ul><p>當然，這些原則不僅限於攝影機的製作，這可以適用於你遊戲的各種面向，不管是美術、聲效、程式技術等等。以下是一個將攝影機與遊戲機制整合做得很好的例子。Taito 推出的《影子傳說》是最早期的雙軸向 platformer 遊戲之一（小知識：本作也是極少數由右向左前進的遊戲）。留意它的水平向 camera-window 運用方式。因為很多激烈的戰鬥是發生在樹幹上，所以 camera-window 的寬度正好與樹幹同寬，讓打鬥時攝影機可以免於不斷的左右晃動。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/kage_240h.gif" style="height: 326px; width: 360px;"><br><strong>The Legend of Kage © 1985 Taito</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking（垂直方向）<br>
+camera-window*（水平方向）</strong></em><br>
+* 框框寬度正好與樹幹同寬<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>另一個將既有系統調整到配合遊戲設計的例子是《忍》。因角色跳躍高度甚高之故，遊戲中使用了一個很高的 camera-window，幾乎跟整個畫面同高。然後，利用緩慢的 position-snapping 來持續讓角色回到畫面中央。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/shinobi_cam(1).gif" style="height: 270px; width: 360px;"><br><strong>Shinobi © 1987 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-snapping（垂直方向）<br>
+camera-window（垂直方向）<br>
+position-locking（水平方向）<br>
+static-forward-focus</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《音速小子》是一款高速的雙軸向 platformer。狹小的 camera-window 是為了讓主角盡可能處於畫面中間，因為玩家得對快速迎面而來的東西保持足夠的視野。框框的高度稍高，則是為了降低小跳躍所造成的畫面晃動。因為也運用了 platform-snapping 手法，所以主角只要雙腳有著地，垂直方向的畫面位置就可以保持住。</p>
+<p>在高速下撞到框框的邊界，仍會使畫面看起來動得有點突然，特別是在環狀跑道，或向下快速墜落的時候。不過，狹小框框的好處就是，在攝影機原本靜止的狀態下，主角在碰到框框邊緣前能獲得的速度也比較有限，多少可以減低畫面動態過於突然的問題。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 375px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/sonic_cam2_180h.gif" style="height: 203px; width: 360px;"><br><strong>Sonic the Hedgehog © 1991 Sega</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>platform-snapping<br>
+camera-window<br>
+static-forward-focus<br>
+manual-control</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>當你可以往任意方向移動，但是又需要足夠的前方視野時，dual-forward-view 手法是很自然的選擇。在角色轉身時，有數種不同的方式可以讓攝影機被吸到預想的錨點上。《洞窟物語》在這方面做得很出色，讓攝影機重新定位的速度，等於攝影機的基本移動速度，加上角色的移動速度。《龍鳳神偷》的手法則略有不同，限制只有在角色移動時，攝影機才會移動。相對靜態的匿蹤遊戲可以使用這種手法，但是像《洞窟物語》這類滿坑滿谷敵人的 platformer 就不適合。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/cave_240(1).gif" style="height: 270px; width: 360px;"><br><strong>Cave Story © 2004 Studio Pixel</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>position-locking（垂直方向）<br>
+dual-forward-focus<br>
+physics-smoothing<br>
+manual-control*</strong></em><br>
+* 玩家可手動進行額外的畫面垂直移動<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《Fez》中沒有一堆敵人從前方朝你衝過來，所以最基本的 camera-window 手法是合理的。但設計者巧妙地結合遊戲機制，在《Fez》中賦予它不一樣的設計價值。也因為玩家最常旋轉場景的時機都是在平台的邊角，在主角身後的東西其實比在主角前方的東西來得重要。另外，在旋轉場景後，攝影機會停在一個讓玩家有盡可能大的前方視野的位置。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/fez_2_240_longB(1).gif" style="height: 214px; width: 385px;"><br><strong>Fez © 2012 Polytron Corporation</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><strong><em>camera-window*（水平方向）</em></strong><br>
+* 在場景立體旋轉時，也會維持住框框位置<br><em><strong>position-locking（垂直方向）<br>
+lerp-smoothing<br>
+region-based-anchors<br>
+manual-control*</strong></em><br>
+* 右類比搖桿可進行額外的畫面平移<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>在《Vessel》一作中的做法，對單房間式的解謎遊戲來說算是相當完美的。遊戲中運用了 region-focus 手法，來讓所有必要的謎題元素都清楚地呈現在同一個畫面上；玩家所造成額外的畫面小幅移動，也提供了更好的主控感受；攝影機會緩慢平順地在謎題區域間移動。整體來說，將預設的畫面構圖與實在的操作感結合得很好。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/vessel_240.gif" style="height: 215px; width: 390px;"><br><strong>Vessel © 2012 Strange Loop Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-focus*</strong></em><br>
+* 攝影機位置大體上會停在區域錨點，但隨著玩家移動會有一點點偏移<br><em><strong>region-based-anchors*</strong></em><br>
+* 不同的區域有著不同的錨點位置與縮放程度<br><em><strong>cue-focus<br>
+physics-smoothing<br>
+cinematic-paths</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p>&nbsp;</p>
+<p>《The Swapper》利用了許多不同的 cinematic-path，來達到傳遞故事與獨特氣氛的效果。這個手法讓玩家在體驗戲劇張力的同時，不會因為制式的過場動畫影響，而導致遊戲體驗突然被中斷。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center; width: 400px;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/swapper_2_240_noise.gif" style="height: 213px; width: 390px;"><br><strong>The Swapper © 2013 Facepalm Games</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>target-focus<br>
+physics-smoothing<br>
+region-based-anchors<br>
+cue-focus<br>
+cinematic-paths</strong></em><br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect16" id="sect16"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>《Mushroom 11》</strong></big></p>
+<p><strong>我正在製作中的攝影機系統</strong></p>
+<p>《Mushroom 11》中的攝影機系統要做到的是很精細的個別區域指引。每個關卡皆內含數十個區域，每個區域又有獨自的攝影機移動範圍，以及縮放程度（視角 FOV 設定）。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/Screen%20Shot%202015-04-14%20at%204.00.04%20PM.jpg" style="height: 232px; width: 385px;"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><em><strong>position-averaging*<br>
+static-forward-focus*<br>
+cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用<br><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>每個區域都很小心地加上了順序編號，而攝影機是被最優先區域中的菌體塊所主控。只要任何一塊菌體，就算只有一格細胞，進入了比現在更優先的區域中，攝影機就會轉移目標到那塊菌體上。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_lvl2_seesaw_240_2.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><span style="color:green;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度</span><br><em><strong>position-averaging*<br>
+static-forward-focus*<br>
+cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用<br><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p>留意到畫面邊緣其實是會清除菌體細胞的，這讓攝影機的準確控制愈加重要。在上圖中很清楚可以看到，畫面上留下了足夠的空間來弄出解法，然後當前方菌體碰到新區域時，再快速地讓攝影機跟上。這個攝影機移動的速度與時機，得要讓前進中的菌體不會被邊界卡到而遭清除。</p>
+<p>區域主要有分兩大類：以平均位置為主的區域，和以前進為主的區域。這個類別主宰了攝影機的焦點該放在哪裡。當焦點決定後，攝影機就會試著往該處移動，但同時也須遵守區域範圍限制。</p>
+<p><strong>平均位置為主的區域</strong></p>
+<p>某些區域會使用所有細胞的平均位置，自然會讓攝影機靠向較大塊的菌體。這在玩家需要同時控制多塊菌體，或前進方向非單一的情形下很有用。這類區域設定會被用在封閉式的謎題上，也就是所有菌體塊都相距不遠時（不然它就會被畫面邊緣清除掉了）。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_pool1_avg_240.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><em><strong><span style="color:green;">position-averaging*</span><br>
+static-forward-focus*<br>
+cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用<br><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><strong>以前進為主的區域</strong></p>
+<p>比較線性前進的區域，就會需要聚焦在最前方的菌體塊上。不論何時，最前方的那一塊（前方在哪是看各別的區域路線設定）會主控攝影機，而忽略被遺留在後的。這邊也會加上一個 static-forward-focus 的距離，因為這也很適用於這類的區域。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_lvl1_bldg_3_240.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><em><strong>position-averaging*<br><span style="color:green;">static-forward-focus*</span><br>
+cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用<br><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><strong>提示物</strong></p>
+<p>前述兩種提到的區域都可以與 cue-focus 配合使用。當攝影機位於這類區域時，特定物體或是角色可以做為吸引子，並有指定或動態的吸引參數。如下圖所示，魔王戰即是使用這種手法的好地方。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_boss3_3_240.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><em><strong>position-averaging*<br>
+static-forward-focus*</strong></em><br><span style="color:green;"><em><strong>cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用</span><br><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><strong>柔化攝影機動態</strong></p>
+<p>本作的柔化動態是結合了 projected-focus 與 physics-smoothing 兩個手法。基於菌體塊的移動速度來決定柔化參數，效果很不錯：如果玩家動得很快，攝影機動態會相對比較準確與銳利，如果玩家優雅地在刷菌體，那攝影機也會很優雅地慢慢飄。</p>
+<p>因為遊戲中基本上沒有跳躍能力（造成瞬動或瞬停等難以預測的動態），使用 projected-focus 手法就很恰當。讓攝影機瞄準單一菌體塊（或所有的平均）在未來數毫秒時的位置，就能達到更準確也可預期的攝影機行為。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_lvl6_crosscog_30fps_240.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><em><strong>region-based-anchors*</strong></em><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><em><strong>position-averaging*<br>
+static-forward-focus*<br>
+cue-focus*</strong></em><br>
+* 只有在特定有設定這些功能的區域使用<br><span style="color:green;"><em><strong>projected-focus<br>
+physics-smoothing*</strong></em><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></span></td>
+</tr></tbody></table><p>在所有這些的攝影機行為都定義好後，這個系統就可以同時處理多塊動態改變、大小速度不一、會在區域間快速移動的菌體生物。</p>
+<table style="width: 640px;"><tbody><tr><td style="vertical-align: top; text-align: center;"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/m11_lvl5_rocketgas_240.gif"><br><strong>Mushroom 11 © [Release TBA] Untame</strong></td>
+<td style="vertical-align: top;"><span style="font-size:12px;"><strong><em>region-based-anchors*</em></strong><br>
+* 每個區域有事先設定的攝影機移動範圍與縮放程度<br><strong><em>position-averaging*<br>
+static-forward-focus*<br>
+cue-focus*</em></strong><br>
+* 只有在特定有設定這些功能的區域使用<br><strong><em>projected-focus<br>
+physics-smoothing*</em></strong><br>
+* 移動緩和的程度依角色速度變化<br>
+&nbsp;</span></td>
+</tr></tbody></table><p><a name="sect17" id="sect17"></a></p>
+<p>&nbsp;</p>
+<p><big><strong>詞彙</strong></big></p>
+<table style="width: 640px;"><tbody><tr><td><em><strong>auto-scroll</strong></em></td>
+<td>玩家無法控制畫面的捲動</td>
+</tr><tr><td><em><strong>camera-path</strong></em></td>
+<td>在關卡中使用預設好的攝影機前進路徑</td>
+</tr><tr><td><em><strong>camera-window</strong></em></td>
+<td>當玩家碰到隱形框框的邊緣時，就移動攝影機位置</td>
+</tr><tr><td><em><strong>cinematic-paths</strong></em></td>
+<td>攝影機暫停平常的功能，來呈現「畫面外」的背景敘事</td>
+</tr><tr><td><em><strong>cue-focus</strong></em></td>
+<td>畫面焦點會受遊戲世界中的提示物（吸引子）影響</td>
+</tr><tr><td><em><strong>dual-forward-focus</strong></em></td>
+<td>玩家面向的方向會改變攝影機焦點，讓前進方向上一直保有足夠的視野</td>
+</tr><tr><td><em><strong>edge-snapping</strong></em></td>
+<td>對攝影機可移動的範圍設下硬性的邊界</td>
+</tr><tr><td><em><strong>gesture-focus</strong></em></td>
+<td>遊戲機制上所觸發的攝影機運鏡</td>
+</tr><tr><td><em><strong>lerp-smoothing</strong></em></td>
+<td>以線性內插法不斷縮短攝影機與行動中角色間的距離</td>
+</tr><tr><td><em><strong>physics-smoothing</strong></em></td>
+<td>攝影機具有物理特性，不斷追蹤目標物移動</td>
+</tr><tr><td><em><strong>platform-snapping</strong></em></td>
+<td>玩家角色著地時，攝影機會貼齊到角色所在高度</td>
+</tr><tr><td><em><strong>position-averaging</strong></em></td>
+<td>聚焦在所有相關目標物的位置平均處</td>
+</tr><tr><td><em><strong>position-locking</strong></em></td>
+<td>攝影機鎖定在玩家角色的位置</td>
+</tr><tr><td><em><strong>position-snapping</strong></em></td>
+<td>不斷地調整框框偏移，讓角色可以慢慢回到攝影機中央</td>
+</tr><tr><td><em><strong>projected-focus</strong></em></td>
+<td>攝影機跟隨主角的預期位置（用外插法求得）來移動</td>
+</tr><tr><td><em><strong>region-based-anchors</strong></em></td>
+<td>不同區域（甚至同一關卡中）攝影機位置與焦點的錨點也會不同</td>
+</tr><tr><td><em><strong>region-focus</strong></em></td>
+<td>聚焦於區域錨點，同時也參考玩家的位置</td>
+</tr><tr><td><em><strong>speedup-pull-zone</strong></em></td>
+<td>在玩家跨過 camera-window 邊界時，讓攝影機漸漸加速跟上</td>
+</tr><tr><td><em><strong>speedup-push-zone</strong></em></td>
+<td>當在此區間內時，漸漸讓攝影機跟上玩家角色的速度</td>
+</tr><tr><td><em><strong>static-forward-focus</strong></em></td>
+<td>對遊戲主要的前進方向分配比較大的視野空間</td>
+</tr><tr><td><em><strong>target-focus</strong></em></td>
+<td>攝影機會依照玩家操作的方向，聚焦於前方視野</td>
+</tr><tr><td><em><strong>zoom-to-fit</strong></em></td>
+<td>改變縮放或前後移動攝影機來呈現重要的物件</td>
+</tr></tbody></table><p>&nbsp;</p>
+<p><big><strong>誌謝</strong></big></p>
+<p>我在此要感謝獨立遊戲開發社群的朋友們，在這次研究中給我的許多幫助，也特別感謝 <a href="https://twitter.com/nyugamecenter" target="_blank">NYU Game Center</a> 的大力支持。</p>
+<p>&nbsp;</p>
+<p>※ ※ ※（正文結束）※ ※ ※</p>
+<p>&nbsp;</p>
+<p>我自己在翻譯的過程中，因為必須要細究某些詞句如何翻譯才能盡可能正確，畢竟文中多是技術細節與術語，若譯錯，或原文其實有疑議處，一般快速瀏覽只會覺得「幹好想按 END」（你按 END 了嗎？回去重讀！），其實很難發現錯誤。如果對於正文細節有任何問題，請盡量提出，讓這份資料可以更加完整正確。 </p>
+</div></div></div><div class="field field-name-field-tag field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Tag: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://igdshare.org/taxonomy/term/20" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">遊戲設計</a></li></ul></div>      </div>
+
+      
+          </div>
+  </div>
+  
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>回到頁首</span></a>
+    </div>
+
+    <div class="forum-post-links">
+      <ul class="links inline"><li class="service-links-twitter-widget first"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 63px; height: 20px;" title="Twitter Tweet Button" src="./scroll_files/tweet_button.d9084ca5af1ffbe01c8d444cfadfa6fe.en.html" data-url="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren"></iframe></li>
+<li class="service-links-facebook-share"><fb:share-button type="button_count" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren" style="margin-bottom: 8px; vertical-align: bottom;" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=182079448555217&amp;container_width=0&amp;href=https%3A%2F%2Figdshare.org%2Fcontent%2Fgdc2015-2d-scrolling-itay-keren&amp;locale=en_US&amp;sdk=joey&amp;type=button_count"><span style="vertical-align: bottom; width: 91px; height: 20px;"><iframe name="f37d4ef17d1c51c" width="1000px" height="1000px" title="fb:share_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./scroll_files/share_button.html" style="border: none; visibility: visible; width: 91px; height: 20px;" class=""></iframe></span></fb:share-button></li>
+<li class="comment_forbidden last"><span>發表回應前，請先<a href="https://igdshare.org/user/login?destination=node/709%23comment-form">登入</a>或<a href="https://igdshare.org/user/register?destination=node/709%23comment-form">註冊</a></span></li>
+</ul>    </div>
+  </div>
+  </div>
+<div id="forum-comments" class="comment-wrapper">
+  <a id="comment-378"></a>
+
+
+<div id="post-378" class="forum-post clearfix zh-hant posted-by-1464" about="/comment/378#comment-378" typeof="sioc:Post sioct:Comment">
+  <div class="forum-post-info clearfix">
+    <div class="forum-posted-on">
+            <div class="meta submitted">
+                <div class="user-picture">
+    <img typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/picture-default.png" alt="WxlSVD&#39;s 的頭像" title="WxlSVD&#39;s 的頭像">  </div>
+            </div>
+      <span property="dc:date dc:created" content="2016-03-10T19:50:55+08:00" datatype="xsd:dateTime" rel="sioc:has_creator">由 <span class="username" xml:lang="" about="/users/wxlsvd" typeof="sioc:UserAccount" property="foaf:name" datatype="">WxlSVD</span> (註冊使用者) 在 星期四,03/10/2016 - 19:50 發表</span>
+                    
+        
+                  </div>
+    
+    
+        
+    <span class="forum-post-number"><a href="https://igdshare.org/comment/378#comment-378" class="permalink" rel="bookmark">#2</a></span>
+  </div> 
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-main clearfix">
+      
+      <div class="forum-post-content">
+        <span rel="sioc:reply_of" resource="/content/gdc2015-2d-scrolling-itay-keren" class="rdf-meta element-hidden"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p> 感謝，沒想到原作者想出的結論是隨機應變，多用幾種都沒問題.....太猛了 </p>
+</div></div></div>      </div>
+
+      
+          </div>
+  </div>
+  
+  <div class="forum-post-footer clearfix">
+    <div class="forum-jump-links">
+      <a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#forum-topic-top" title="Jump to top of page" class="af-button-small"><span>回到頁首</span></a>
+    </div>
+
+    <div class="forum-post-links">
+      <ul class="links inline"><li class="comment_forbidden first last"><span>發表回應前，請先<a href="https://igdshare.org/user/login?destination=node/709%23comment-form">登入</a>或<a href="https://igdshare.org/user/register?destination=node/709%23comment-form">註冊</a></span></li>
+</ul>    </div>
+  </div>
+  </div>
+        </div>
+  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+        
+          <div id="sidebar-second" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-second">
+    <div id="block-search-form" class="block block-search">
+
+    <h2>站內搜尋</h2>
+  
+  <div class="content">
+    <form action="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">搜尋 </label>
+ <input title="輸入您想要搜尋的關鍵字。" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="搜尋" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-KDvLSelG3l0EDIvNcJZZx6vXhJCwd5Lrl7OZ3O9MeLc">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+</div>
+<div id="block-block-3" class="block block-block">
+
+    <h2>Follow Us</h2>
+  
+  <div class="content">
+    <p style="text-align: center; "><a href="http://www.facebook.com/igdshare" target="_blank"><img alt="" class="media-image" height="24" style="margin-left: 1px; margin-right: 1px; width: 24px; height: 24px; " title="IGDSHARE 的 Facebook" width="24" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/facebook.png"></a><a href="http://twitter.com/igdshare" target="_blank"><img alt="" class="media-image" height="24" style="margin-left: 1px; margin-right: 1px; width: 24px; height: 24px; " title="IGDSHARE 的 Twitter" width="24" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/twitter.png"></a><a href="http://www.plurk.com/igdshare" target="_blank" title="IGDSHARE 的 Plurk"><img src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/plurk.png" style="margin-left: 2px; margin-right: 2px; "></a><a href="http://www.youtube.com/user/igdshare" target="_blank"><img alt="" class="media-image" height="24" style="margin-left: 1px; margin-right: 1px; width: 24px; height: 24px; " title="IGDSHARE 的影片紀錄(youtube)" width="24" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/youtube.png"></a><a href="http://speakerdeck.com/u/igdshare" target="_blank"><img alt="" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/speakerdeck.png" style="margin-left: 1px; margin-right: 1px; width: 24px; height: 24px; " title="IGDSHARE 的簡報集(speakerdeck)"></a><a href="https://twitch.tv/igdshare/" target="_blank"><img alt="" class="media-image" style="width: 24px; height: 24px;" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/twitch_s24.png" width="24" height="24"></a><a href="https://discord.gg/f92hQJh" target="_blank"><img alt="" class="media-image" height="64" style="width: 24px; height: 24px; margin-left: 1px; margin-right: 1px;" width="64" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/discord-new-logo_s_0.png"></a></p>
+  </div>
+</div>
+<div id="block-block-2" class="block block-block">
+
+    <h2>最新活動</h2>
+  
+  <div class="content">
+    <p> <span style="font-size:24px;"><strong><a href="https://igdshare.kktix.cc/events/igdshare190922" target="_blank">分享會 190922 開放報名！</a></strong></span> </p>
+  </div>
+</div>
+<nav id="block-menu-menu-categories" class="block block-menu" role="navigation">
+
+    <h2>內容/討論分類</h2>
+  
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="https://igdshare.org/forum/sysop" title="">站務專區</a></li>
+<li class="leaf"><a href="https://igdshare.org/forum/event" title="">活動訊息</a></li>
+<li class="leaf"><a href="https://igdshare.org/forum/research" title="">專題探討</a></li>
+<li class="leaf"><a href="https://igdshare.org/forum/gameinfo" title="">遊戲資訊</a></li>
+<li class="leaf"><a href="https://igdshare.org/forum/development" title="">製作開發</a></li>
+<li class="last leaf"><a href="https://igdshare.org/forum/communication" title="">資訊交流</a></li>
+</ul>  </div>
+</nav>
+<div id="block-user-login" class="block block-user">
+
+    <h2>使用者登入</h2>
+  
+  <div class="content">
+    <form action="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren?destination=node/709" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">使用者名稱 <span class="form-required" title="此欄位是必需的。">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">密碼 <span class="form-required" title="此欄位是必需的。">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="https://igdshare.org/user/register" title="建立一個新的使用者帳號。">註冊新帳號</a></li>
+<li class="last"><a href="https://igdshare.org/user/password" title="透過電子郵件索取新密碼">索取新密碼</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-remJJVi-kzBG9qZL_XA6KxNegsA0XYN8HaJXjq8WxVo">
+<input type="hidden" name="form_id" value="user_login_block">
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="登入" class="form-submit"></div><div class="hybridauth-widget-wrapper"><div class="item-list"><ul class="hybridauth-widget"><li class="first"><a href="file:///D:/hybridauth/window/Facebook?destination=node/709&amp;destination_error=node/709" title="Facebook" class="hybridauth-widget-provider hybridauth-onclick-current hybridauth-onclick-processed hybridauth-provider-processed" rel="nofollow" data-hybridauth-provider="Facebook" data-hybridauth-url="/hybridauth/window/Facebook?destination=node/709&amp;destination_error=node/709" data-ajax="false" data-hybridauth-width="800" data-hybridauth-height="500"><span class="hybridauth-icon facebook hybridauth-icon-hybridauth-32 hybridauth-facebook hybridauth-facebook-hybridauth-32" title="Facebook"><span class="element-invisible">Login with Facebook</span></span>
+</a></li>
+<li class="last"><a href="file:///D:/hybridauth/window/Google?destination=node/709&amp;destination_error=node/709" title="Google" class="hybridauth-widget-provider hybridauth-onclick-current hybridauth-onclick-processed hybridauth-provider-processed" rel="nofollow" data-hybridauth-provider="Google" data-hybridauth-url="/hybridauth/window/Google?destination=node/709&amp;destination_error=node/709" data-ajax="false" data-hybridauth-width="800" data-hybridauth-height="500"><span class="hybridauth-icon google hybridauth-icon-hybridauth-32 hybridauth-google hybridauth-google-hybridauth-32" title="Google"><span class="element-invisible">Login with Google</span></span>
+</a></li>
+</ul></div></div>
+</div></form>  </div>
+</div>
+<div id="block-fb-likebox-0" class="block block-fb-likebox">
+
+    <h2>FACEBOOK</h2>
+  
+  <div class="content">
+    <div class="fb-page fb_iframe_widget" data-href="http://www.facebook.com/igdshare" data-width="185" data-height="388" data-tabs="" data-hide-cover="false" data-show-facepile="true" data-hide-cta="false" data-small-header="false" data-adapt-container-width="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=182079448555217&amp;container_width=191&amp;height=388&amp;hide_cover=false&amp;hide_cta=false&amp;href=http%3A%2F%2Fwww.facebook.com%2Figdshare&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;width=185"><span style="vertical-align: bottom; width: 185px; height: 196px;"><iframe name="f240b4aab007cdc" width="185px" height="388px" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./scroll_files/page.html" style="border: none; visibility: visible; width: 185px; height: 196px;" class=""></iframe></span></div>  </div>
+</div>
+<div id="block-block-12" class="block block-block">
+
+    <h2>Twitter</h2>
+  
+  <div class="content">
+    <p> <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 520px; height: 360px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;" data-widget-id="profile:igdshare" title="Twitter Timeline" src="./scroll_files/saved_resource.html"></iframe></p>
+<script>
+<!--//--><![CDATA[// ><!--
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+//--><!]]>
+</script>  </div>
+</div>
+<div id="block-block-1" class="block block-block">
+
+    <h2>贊助單位</h2>
+  
+  <div class="content">
+    <p style="text-align: center;"><a href="http://www.archilife.org/" target="_blank"><img alt="" class="media-image" height="99" style="height: 40px; width: 192px;" width="480" typeof="foaf:Image" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/archilife_logo.jpg"></a></p>
+  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+          <div id="footer-columns" class="clearfix">
+          <div class="region region-footer-firstcolumn">
+    <div id="block-block-9" class="block block-block">
+
+    <h2>WELCOME</h2>
+  
+  <div class="content">
+    <p> 感謝蒞臨，希望各位同好前輩多多參與討論、給予指教。 </p>
+  </div>
+</div>
+  </div>
+          <div class="region region-footer-secondcolumn">
+    <div id="block-block-10" class="block block-block">
+
+    <h2>COPYLEFT</h2>
+  
+  <div class="content">
+    <p> 2011 獨立遊戲開發者分享會，本站管理員所發表之文章歡迎以 <a href="http://creativecommons.org/licenses/by-nc/3.0/deed.zh_TW" target="_blank">CC BY-NC</a> 方式轉載，轉載時請標註文章出處及原文章連結。討論區會員所發表之文章其權利歸原著作人所有。 </p>
+  </div>
+</div>
+  </div>
+          <div class="region region-footer-thirdcolumn">
+    <div id="block-block-11" class="block block-block">
+
+    <h2>隱私權聲明</h2>
+  
+  <div class="content">
+    <p> <a href="http://igdshare.org/content/privacy-statement" target="_self">本站隱私權聲明</a> </p>
+  </div>
+</div>
+  </div>
+              </div> <!-- /#footer-columns -->
+    
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+  <script type="text/javascript" src="file:///D:/dev/MyGitHub/yellow0804.github.io/scroll/[GDC%202015]%20Scroll%20Back%20-%202D%20%E6%8D%B2%E8%BB%B8%E9%81%8A%E6%88%B2%E7%9A%84%E6%94%9D%E5%BD%B1%E6%A9%9F%E7%90%86%E8%AB%96%E8%88%87%E5%AF%A6%E5%8B%99%20_%20IGDSHARE_files/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js.%E4%B8%8B%E8%BD%BD"></script>
+
+
+<div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-orig-layout">        <div id="outerImageContainer" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><div id="modalContainer" style="display: none; padding: 10px;"></div><div id="frameContainer" style="display: none; padding: 10px;"></div><div id="imageContainer" style="display: none; padding: 10px;"><img id="lightboxImage" alt=""><div id="hoverNav"><a id="prevLink" title="前項" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="padding-top: 10px;"></a><a id="nextLink" title="下一頁" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="padding-top: 10px;"></a></div></div><div id="loading"><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" id="loadingLink"></a></div></div>        <div id="imageDataContainer" class="clearfix" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">          <div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><div id="frameHoverNav"><a id="framePrevLink" title="前項" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="padding-top: 10px;"></a><a id="frameNextLink" title="下一頁" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="padding-top: 10px;"></a></div><a id="bottomNavClose" title="關閉" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"></a><a id="bottomNavZoom" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#"></a><a id="bottomNavZoomOut" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#"></a><a id="lightshowPause" title="Pause Slideshow" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#" style="display: none;"></a></div></div>        </div>      </div><p id="back-top" style="display: none;"><a href="https://igdshare.org/content/gdc2015-2d-scrolling-itay-keren#top"><span id="button"></span><span id="link">Back to top</span></a></p><div id="fb-root" class=" fb_reset fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./scroll_files/xd_arbiter.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./scroll_files/widget_iframe.d9084ca5af1ffbe01c8d444cfadfa6fe.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./scroll_files/saved_resource(1).html"></iframe></body></html>
