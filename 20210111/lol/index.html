@@ -68,16 +68,23 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
         <script>
-            var imanges = [];
+            var images = [];
             $(function () {
                 $("#stopID").prop("disabled", true);
-                var image = new Image();
-                for (var i = 0; i < 153; i++) {
-                    image.src = "../game_data_files/" + i + ".png";
-                    $("#hero-1").prop("src", image.src);
-                }
-                $("#hero-1").prop("src", "../game_data_files/default.png");
+                preloadImg(images);
+                console.log(images.length)
+                console.log(images)
+                // $("#hero-1").prop("src", images[0].src);
             });
+
+            function preloadImg(images) {
+                for (var i = 0; i < 153; i++) {
+                    images[i] = new Image();
+                    images[i].src = "../game_data_files/" + i + ".png";
+
+                }
+            }
+
             var timer1;
             var timer2;
             var timer3;
@@ -101,9 +108,10 @@
                     index = Math.floor(Math.random() * imgs.length);
                 }
                 alreadyIndex[0] = index;
-                var e = imgs[index];
+                var e = images[index];
+                var t = imgs[index];
                 $(hero).prop("src", e.src);
-                $(title).text(e.title);
+                $(title).text(t.title);
             }
 
             function changeImage2() {
@@ -114,9 +122,10 @@
                     index = Math.floor(Math.random() * imgs.length);
                 }
                 alreadyIndex[1] = index;
-                var e = imgs[index];
+                var e = images[index];
+                var t = imgs[index];
                 $(hero).prop("src", e.src);
-                $(title).text(e.title);
+                $(title).text(t.title);
             }
 
             function changeImage3() {
@@ -127,9 +136,10 @@
                     index = Math.floor(Math.random() * imgs.length);
                 }
                 alreadyIndex[2] = index;
-                var e = imgs[index];
+                var e = images[index];
+                var t = imgs[index];
                 $(hero).prop("src", e.src);
-                $(title).text(e.title);
+                $(title).text(t.title);
             }
 
             function changeImage4() {
@@ -140,9 +150,10 @@
                     index = Math.floor(Math.random() * imgs.length);
                 }
                 alreadyIndex[3] = index;
-                var e = imgs[index];
+                var e = images[index];
+                var t = imgs[index];
                 $(hero).prop("src", e.src);
-                $(title).text(e.title);
+                $(title).text(t.title);
             }
 
             function imgStop() {
