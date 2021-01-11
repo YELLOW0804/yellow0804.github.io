@@ -10,7 +10,6 @@
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
         <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
         <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
@@ -21,7 +20,7 @@
     </head>
     <body>
         <header class="navbar navbar-fixed-top">
-            <h2>英雄联盟随机英雄选择器</h2>
+            <h2>随机英雄选择机器人</h2>
         </header>
         <div class="mid-div">
             <div class="container-fluid">
@@ -69,8 +68,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
         <script>
+            var imanges = [];
             $(function () {
                 $("#stopID").prop("disabled", true);
+                var image = new Image();
+                image.src = "../game_data_files/1.png"
+                $("#hero-2").prop("src", image.src)
+
             });
             var timer1;
             var timer2;
@@ -151,235 +155,235 @@
 
         <script language='javascript' type='text/javascript'>
             //准备一个一维数组，装用户的像片路径
-            var imgs = [{src: "../game_data_files/Annie.png", title: "黑暗之女 安妮"}, {
-                src: "../game_data_files/Olaf.png",
+            var imgs = [{src: "../game_data_files/0.png", title: "黑暗之女 安妮"}, {
+                src: "../game_data_files/1.png",
                 title: "狂战士 奥拉夫"
-            }, {src: "../game_data_files/Galio.png", title: "正义巨像 加里奥"}, {
-                src: "../game_data_files/TwistedFate.png",
+            }, {src: "../game_data_files/2.png", title: "正义巨像 加里奥"}, {
+                src: "../game_data_files/3.png",
                 title: "卡牌大师 崔斯特"
-            }, {src: "../game_data_files/XinZhao.png", title: "德邦总管 赵信"}, {
-                src: "../game_data_files/Urgot.png",
+            }, {src: "../game_data_files/4.png", title: "德邦总管 赵信"}, {
+                src: "../game_data_files/5.png",
                 title: "无畏战车 厄加特"
-            }, {src: "../game_data_files/Leblanc.png", title: "诡术妖姬 乐芙兰"}, {
-                src: "../game_data_files/Vladimir.png",
+            }, {src: "../game_data_files/6.png", title: "诡术妖姬 乐芙兰"}, {
+                src: "../game_data_files/7.png",
                 title: "猩红收割者 弗拉基米尔"
-            }, {src: "../game_data_files/FiddleSticks.png", title: "远古恐惧 费德提克"}, {
-                src: "../game_data_files/Kayle.png",
+            }, {src: "../game_data_files/8.png", title: "远古恐惧 费德提克"}, {
+                src: "../game_data_files/9.png",
                 title: "正义天使 凯尔"
-            }, {src: "../game_data_files/MasterYi.png", title: "无极剑圣 易"}, {
-                src: "../game_data_files/Alistar.png",
+            }, {src: "../game_data_files/10.png", title: "无极剑圣 易"}, {
+                src: "../game_data_files/11.png",
                 title: "牛头酋长 阿利斯塔"
-            }, {src: "../game_data_files/Ryze.png", title: "符文法师 瑞兹"}, {
-                src: "../game_data_files/Sion.png",
+            }, {src: "../game_data_files/12.png", title: "符文法师 瑞兹"}, {
+                src: "../game_data_files/13.png",
                 title: "亡灵战神 赛恩"
-            }, {src: "../game_data_files/Sivir.png", title: "战争女神 希维尔"}, {
-                src: "../game_data_files/Soraka.png",
+            }, {src: "../game_data_files/14.png", title: "战争女神 希维尔"}, {
+                src: "../game_data_files/15.png",
                 title: "众星之子 索拉卡"
-            }, {src: "../game_data_files/Teemo.png", title: "迅捷斥候 提莫"}, {
-                src: "../game_data_files/Tristana.png",
+            }, {src: "../game_data_files/16.png", title: "迅捷斥候 提莫"}, {
+                src: "../game_data_files/17.png",
                 title: "麦林炮手 崔丝塔娜"
-            }, {src: "../game_data_files/Warwick.png", title: "祖安怒兽 沃里克"}, {
-                src: "../game_data_files/Nunu.png",
+            }, {src: "../game_data_files/18.png", title: "祖安怒兽 沃里克"}, {
+                src: "../game_data_files/19.png",
                 title: "雪原双子 努努和威朗普"
-            }, {src: "../game_data_files/MissFortune.png", title: "赏金猎人 厄运小姐"}, {
-                src: "../game_data_files/Ashe.png",
+            }, {src: "../game_data_files/20.png", title: "赏金猎人 厄运小姐"}, {
+                src: "../game_data_files/21.png",
                 title: "寒冰射手 艾希"
-            }, {src: "../game_data_files/Tryndamere.png", title: "蛮族之王 泰达米尔"}, {
-                src: "../game_data_files/Jax.png",
+            }, {src: "../game_data_files/22.png", title: "蛮族之王 泰达米尔"}, {
+                src: "../game_data_files/23.png",
                 title: "武器大师 贾克斯"
-            }, {src: "../game_data_files/Morgana.png", title: "堕落天使 莫甘娜"}, {
-                src: "../game_data_files/Zilean.png",
+            }, {src: "../game_data_files/24.png", title: "堕落天使 莫甘娜"}, {
+                src: "../game_data_files/25.png",
                 title: "时光守护者 基兰"
-            }, {src: "../game_data_files/Singed.png", title: "炼金术士 辛吉德"}, {
-                src: "../game_data_files/Evelynn.png",
+            }, {src: "../game_data_files/26.png", title: "炼金术士 辛吉德"}, {
+                src: "../game_data_files/27.png",
                 title: "痛苦之拥 伊芙琳"
-            }, {src: "../game_data_files/Twitch.png", title: "瘟疫之源 图奇"}, {
-                src: "../game_data_files/Karthus.png",
+            }, {src: "../game_data_files/28.png", title: "瘟疫之源 图奇"}, {
+                src: "../game_data_files/29.png",
                 title: "死亡颂唱者 卡尔萨斯"
-            }, {src: "../game_data_files/Chogath.png", title: "虚空恐惧 科加斯"}, {
-                src: "../game_data_files/Amumu.png",
+            }, {src: "../game_data_files/30.png", title: "虚空恐惧 科加斯"}, {
+                src: "../game_data_files/31.png",
                 title: "殇之木乃伊 阿木木"
-            }, {src: "../game_data_files/Rammus.png", title: "披甲龙龟 拉莫斯"}, {
-                src: "../game_data_files/Anivia.png",
+            }, {src: "../game_data_files/32.png", title: "披甲龙龟 拉莫斯"}, {
+                src: "../game_data_files/33.png",
                 title: "冰晶凤凰 艾尼维亚"
-            }, {src: "../game_data_files/Shaco.png", title: "恶魔小丑 萨科"}, {
-                src: "../game_data_files/DrMundo.png",
+            }, {src: "../game_data_files/34.png", title: "恶魔小丑 萨科"}, {
+                src: "../game_data_files/35.png",
                 title: "祖安狂人 蒙多医生"
-            }, {src: "../game_data_files/Sona.png", title: "琴瑟仙女 娑娜"}, {
-                src: "../game_data_files/Kassadin.png",
+            }, {src: "../game_data_files/36.png", title: "琴瑟仙女 娑娜"}, {
+                src: "../game_data_files/37.png",
                 title: "虚空行者 卡萨丁"
-            }, {src: "../game_data_files/Irelia.png", title: "刀锋舞者 艾瑞莉娅"}, {
-                src: "../game_data_files/Janna.png",
+            }, {src: "../game_data_files/38.png", title: "刀锋舞者 艾瑞莉娅"}, {
+                src: "../game_data_files/39.png",
                 title: "风暴之怒 迦娜"
-            }, {src: "../game_data_files/Gangplank.png", title: "海洋之灾 普朗克"}, {
-                src: "../game_data_files/Corki.png",
+            }, {src: "../game_data_files/40.png", title: "海洋之灾 普朗克"}, {
+                src: "../game_data_files/41.png",
                 title: "英勇投弹手 库奇"
-            }, {src: "../game_data_files/Karma.png", title: "天启者 卡尔玛"}, {
-                src: "../game_data_files/Taric.png",
+            }, {src: "../game_data_files/42.png", title: "天启者 卡尔玛"}, {
+                src: "../game_data_files/43.png",
                 title: "瓦洛兰之盾 塔里克"
-            }, {src: "../game_data_files/Veigar.png", title: "邪恶小法师 维迦"}, {
-                src: "../game_data_files/Trundle.png",
+            }, {src: "../game_data_files/44.png", title: "邪恶小法师 维迦"}, {
+                src: "../game_data_files/45.png",
                 title: "巨魔之王 特朗德尔"
-            }, {src: "../game_data_files/Swain.png", title: "诺克萨斯统领 斯维因"}, {
-                src: "../game_data_files/Caitlyn.png",
+            }, {src: "../game_data_files/46.png", title: "诺克萨斯统领 斯维因"}, {
+                src: "../game_data_files/47.png",
                 title: "皮城女警 凯特琳"
-            }, {src: "../game_data_files/Blitzcrank.png", title: "蒸汽机器人 布里茨"}, {
-                src: "../game_data_files/Malphite.png",
+            }, {src: "../game_data_files/48.png", title: "蒸汽机器人 布里茨"}, {
+                src: "../game_data_files/49.png",
                 title: "熔岩巨兽 墨菲特"
-            }, {src: "../game_data_files/Katarina.png", title: "不祥之刃 卡特琳娜"}, {
-                src: "../game_data_files/Nocturne.png",
+            }, {src: "../game_data_files/50.png", title: "不祥之刃 卡特琳娜"}, {
+                src: "../game_data_files/51.png",
                 title: "永恒梦魇 魔腾"
-            }, {src: "../game_data_files/Maokai.png", title: "扭曲树精 茂凯"}, {
-                src: "../game_data_files/Renekton.png",
+            }, {src: "../game_data_files/52.png", title: "扭曲树精 茂凯"}, {
+                src: "../game_data_files/53.png",
                 title: "荒漠屠夫 雷克顿"
-            }, {src: "../game_data_files/JarvanIV.png", title: "德玛西亚皇子 嘉文四世"}, {
-                src: "../game_data_files/Elise.png",
+            }, {src: "../game_data_files/54.png", title: "德玛西亚皇子 嘉文四世"}, {
+                src: "../game_data_files/55.png",
                 title: "蜘蛛女皇 伊莉丝"
-            }, {src: "../game_data_files/Orianna.png", title: "发条魔灵 奥莉安娜"}, {
-                src: "../game_data_files/MonkeyKing.png",
+            }, {src: "../game_data_files/56.png", title: "发条魔灵 奥莉安娜"}, {
+                src: "../game_data_files/57.png",
                 title: "齐天大圣 孙悟空"
-            }, {src: "../game_data_files/Brand.png", title: "复仇焰魂 布兰德"}, {
-                src: "../game_data_files/LeeSin.png",
+            }, {src: "../game_data_files/58.png", title: "复仇焰魂 布兰德"}, {
+                src: "../game_data_files/59.png",
                 title: "盲僧 李青"
-            }, {src: "../game_data_files/Vayne.png", title: "暗夜猎手 薇恩"}, {
-                src: "../game_data_files/Rumble.png",
+            }, {src: "../game_data_files/60.png", title: "暗夜猎手 薇恩"}, {
+                src: "../game_data_files/61.png",
                 title: "机械公敌 兰博"
-            }, {src: "../game_data_files/Cassiopeia.png", title: "魔蛇之拥 卡西奥佩娅"}, {
-                src: "../game_data_files/Skarner.png",
+            }, {src: "../game_data_files/62.png", title: "魔蛇之拥 卡西奥佩娅"}, {
+                src: "../game_data_files/63.png",
                 title: "水晶先锋 斯卡纳"
-            }, {src: "../game_data_files/Heimerdinger.png", title: "大发明家 黑默丁格"}, {
-                src: "../game_data_files/Nasus.png",
+            }, {src: "../game_data_files/64.png", title: "大发明家 黑默丁格"}, {
+                src: "../game_data_files/65.png",
                 title: "沙漠死神 内瑟斯"
-            }, {src: "../game_data_files/Nidalee.png", title: "狂野女猎手 奈德丽"}, {
-                src: "../game_data_files/Udyr.png",
+            }, {src: "../game_data_files/66.png", title: "狂野女猎手 奈德丽"}, {
+                src: "../game_data_files/67.png",
                 title: "兽灵行者 乌迪尔"
-            }, {src: "../game_data_files/Poppy.png", title: "圣锤之毅 波比"}, {
-                src: "../game_data_files/Gragas.png",
+            }, {src: "../game_data_files/68.png", title: "圣锤之毅 波比"}, {
+                src: "../game_data_files/69.png",
                 title: "酒桶 古拉加斯"
-            }, {src: "../game_data_files/Pantheon.png", title: "不屈之枪 潘森"}, {
-                src: "../game_data_files/Ezreal.png",
+            }, {src: "../game_data_files/70.png", title: "不屈之枪 潘森"}, {
+                src: "../game_data_files/71.png",
                 title: "探险家 伊泽瑞尔"
-            }, {src: "../game_data_files/Mordekaiser.png", title: "铁铠冥魂 莫德凯撒"}, {
-                src: "../game_data_files/Yorick.png",
+            }, {src: "../game_data_files/72.png", title: "铁铠冥魂 莫德凯撒"}, {
+                src: "../game_data_files/73.png",
                 title: "牧魂人 约里克"
-            }, {src: "../game_data_files/Akali.png", title: "离群之刺 阿卡丽"}, {
-                src: "../game_data_files/Kennen.png",
+            }, {src: "../game_data_files/74.png", title: "离群之刺 阿卡丽"}, {
+                src: "../game_data_files/75.png",
                 title: "狂暴之心 凯南"
-            }, {src: "../game_data_files/Garen.png", title: "德玛西亚之力 盖伦"}, {
-                src: "../game_data_files/Leona.png",
+            }, {src: "../game_data_files/76.png", title: "德玛西亚之力 盖伦"}, {
+                src: "../game_data_files/77.png",
                 title: "曙光女神 蕾欧娜"
-            }, {src: "../game_data_files/Malzahar.png", title: "虚空先知 玛尔扎哈"}, {
-                src: "../game_data_files/Talon.png",
+            }, {src: "../game_data_files/78.png", title: "虚空先知 玛尔扎哈"}, {
+                src: "../game_data_files/79.png",
                 title: "刀锋之影 泰隆"
-            }, {src: "../game_data_files/Riven.png", title: "放逐之刃 锐雯"}, {
-                src: "../game_data_files/KogMaw.png",
+            }, {src: "../game_data_files/80.png", title: "放逐之刃 锐雯"}, {
+                src: "../game_data_files/81.png",
                 title: "深渊巨口 克格莫"
-            }, {src: "../game_data_files/Shen.png", title: "暮光之眼 慎"}, {
-                src: "../game_data_files/Lux.png",
+            }, {src: "../game_data_files/82.png", title: "暮光之眼 慎"}, {
+                src: "../game_data_files/83.png",
                 title: "光辉女郎 拉克丝"
-            }, {src: "../game_data_files/Xerath.png", title: "远古巫灵 泽拉斯"}, {
-                src: "../game_data_files/Shyvana.png",
+            }, {src: "../game_data_files/84.png", title: "远古巫灵 泽拉斯"}, {
+                src: "../game_data_files/85.png",
                 title: "龙血武姬 希瓦娜"
-            }, {src: "../game_data_files/Ahri.png", title: "九尾妖狐 阿狸"}, {
-                src: "../game_data_files/Graves.png",
+            }, {src: "../game_data_files/86.png", title: "九尾妖狐 阿狸"}, {
+                src: "../game_data_files/87.png",
                 title: "法外狂徒 格雷福斯"
-            }, {src: "../game_data_files/Fizz.png", title: "潮汐海灵 菲兹"}, {
-                src: "../game_data_files/Volibear.png",
+            }, {src: "../game_data_files/88.png", title: "潮汐海灵 菲兹"}, {
+                src: "../game_data_files/89.png",
                 title: "不灭狂雷 沃利贝尔"
-            }, {src: "../game_data_files/Rengar.png", title: "傲之追猎者 雷恩加尔"}, {
-                src: "../game_data_files/Varus.png",
+            }, {src: "../game_data_files/90.png", title: "傲之追猎者 雷恩加尔"}, {
+                src: "../game_data_files/91.png",
                 title: "惩戒之箭 韦鲁斯"
-            }, {src: "../game_data_files/Nautilus.png", title: "深海泰坦 诺提勒斯"}, {
-                src: "../game_data_files/Viktor.png",
+            }, {src: "../game_data_files/92.png", title: "深海泰坦 诺提勒斯"}, {
+                src: "../game_data_files/93.png",
                 title: "机械先驱 维克托"
-            }, {src: "../game_data_files/Sejuani.png", title: "北地之怒 瑟庄妮"}, {
-                src: "../game_data_files/Fiora.png",
+            }, {src: "../game_data_files/94.png", title: "北地之怒 瑟庄妮"}, {
+                src: "../game_data_files/95.png",
                 title: "无双剑姬 菲奥娜"
-            }, {src: "../game_data_files/Ziggs.png", title: "爆破鬼才 吉格斯"}, {
-                src: "../game_data_files/Lulu.png",
+            }, {src: "../game_data_files/96.png", title: "爆破鬼才 吉格斯"}, {
+                src: "../game_data_files/97.png",
                 title: "仙灵女巫 璐璐"
-            }, {src: "../game_data_files/Draven.png", title: "荣耀行刑官 德莱文"}, {
-                src: "../game_data_files/Hecarim.png",
+            }, {src: "../game_data_files/98.png", title: "荣耀行刑官 德莱文"}, {
+                src: "../game_data_files/99.png",
                 title: "战争之影 赫卡里姆"
-            }, {src: "../game_data_files/Khazix.png", title: "虚空掠夺者 卡兹克"}, {
-                src: "../game_data_files/Darius.png",
+            }, {src: "../game_data_files/100.png", title: "虚空掠夺者 卡兹克"}, {
+                src: "../game_data_files/101.png",
                 title: "诺克萨斯之手 德莱厄斯"
-            }, {src: "../game_data_files/Jayce.png", title: "未来守护者 杰斯"}, {
-                src: "../game_data_files/Lissandra.png",
+            }, {src: "../game_data_files/102.png", title: "未来守护者 杰斯"}, {
+                src: "../game_data_files/103.png",
                 title: "冰霜女巫 丽桑卓"
-            }, {src: "../game_data_files/Diana.png", title: "皎月女神 黛安娜"}, {
-                src: "../game_data_files/Quinn.png",
+            }, {src: "../game_data_files/104.png", title: "皎月女神 黛安娜"}, {
+                src: "../game_data_files/105.png",
                 title: "德玛西亚之翼 奎因"
-            }, {src: "../game_data_files/Syndra.png", title: "暗黑元首 辛德拉"}, {
-                src: "../game_data_files/AurelionSol.png",
+            }, {src: "../game_data_files/106.png", title: "暗黑元首 辛德拉"}, {
+                src: "../game_data_files/107.png",
                 title: "铸星龙王 奥瑞利安索尔"
-            }, {src: "../game_data_files/Kayn.png", title: "影流之镰 凯隐"}, {
-                src: "../game_data_files/Zoe.png",
+            }, {src: "../game_data_files/108.png", title: "影流之镰 凯隐"}, {
+                src: "../game_data_files/109.png",
                 title: "暮光星灵 佐伊"
-            }, {src: "../game_data_files/Zyra.png", title: "荆棘之兴 婕拉"}, {
-                src: "../game_data_files/Kaisa.png",
+            }, {src: "../game_data_files/110.png", title: "荆棘之兴 婕拉"}, {
+                src: "../game_data_files/111.png",
                 title: "虚空之女 卡莎"
-            }, {src: "../game_data_files/Seraphine.png", title: "星籁歌姬 萨勒芬妮"}, {
-                src: "../game_data_files/Gnar.png",
+            }, {src: "../game_data_files/112.png", title: "星籁歌姬 萨勒芬妮"}, {
+                src: "../game_data_files/113.png",
                 title: "迷失之牙 纳尔"
-            }, {src: "../game_data_files/Zac.png", title: "生化魔人 扎克"}, {
-                src: "../game_data_files/Yasuo.png",
+            }, {src: "../game_data_files/114.png", title: "生化魔人 扎克"}, {
+                src: "../game_data_files/115.png",
                 title: "疾风剑豪 亚索"
-            }, {src: "../game_data_files/Velkoz.png", title: "虚空之眼 维克兹"}, {
-                src: "../game_data_files/Taliyah.png",
+            }, {src: "../game_data_files/116.png", title: "虚空之眼 维克兹"}, {
+                src: "../game_data_files/117.png",
                 title: "岩雀 塔莉垭"
-            }, {src: "../game_data_files/Camille.png", title: "青钢影 卡蜜尔"}, {
-                src: "../game_data_files/Braum.png",
+            }, {src: "../game_data_files/118.png", title: "青钢影 卡蜜尔"}, {
+                src: "../game_data_files/119.png",
                 title: "弗雷尔卓德之心 布隆"
-            }, {src: "../game_data_files/Jhin.png", title: "戏命师 烬"}, {
-                src: "../game_data_files/Kindred.png",
+            }, {src: "../game_data_files/120.png", title: "戏命师 烬"}, {
+                src: "../game_data_files/121.png",
                 title: "永猎双子 千珏"
-            }, {src: "../game_data_files/Jinx.png", title: "暴走萝莉 金克丝"}, {
-                src: "../game_data_files/TahmKench.png",
+            }, {src: "../game_data_files/122.png", title: "暴走萝莉 金克丝"}, {
+                src: "../game_data_files/123.png",
                 title: "河流之王 塔姆"
-            }, {src: "../game_data_files/Senna.png", title: "涤魂圣枪 赛娜"}, {
-                src: "../game_data_files/Lucian.png",
+            }, {src: "../game_data_files/124.png", title: "涤魂圣枪 赛娜"}, {
+                src: "../game_data_files/125.png",
                 title: "圣枪游侠 卢锡安"
-            }, {src: "../game_data_files/Zed.png", title: "影流之主 劫"}, {
-                src: "../game_data_files/Kled.png",
+            }, {src: "../game_data_files/126.png", title: "影流之主 劫"}, {
+                src: "../game_data_files/127.png",
                 title: "暴怒骑士 克烈"
-            }, {src: "../game_data_files/Ekko.png", title: "时间刺客 艾克"}, {
-                src: "../game_data_files/Qiyana.png",
+            }, {src: "../game_data_files/128.png", title: "时间刺客 艾克"}, {
+                src: "../game_data_files/129.png",
                 title: "元素女皇 奇亚娜"
-            }, {src: "../game_data_files/Vi.png", title: "皮城执法官 蔚"}, {
-                src: "../game_data_files/Aatrox.png",
+            }, {src: "../game_data_files/130.png", title: "皮城执法官 蔚"}, {
+                src: "../game_data_files/131.png",
                 title: "暗裔剑魔 亚托克斯"
-            }, {src: "../game_data_files/Nami.png", title: "唤潮鲛姬 娜美"}, {
-                src: "../game_data_files/Azir.png",
+            }, {src: "../game_data_files/132.png", title: "唤潮鲛姬 娜美"}, {
+                src: "../game_data_files/133.png",
                 title: "沙漠皇帝 阿兹尔"
-            }, {src: "../game_data_files/Yuumi.png", title: "魔法猫咪 悠米"}, {
-                src: "../game_data_files/Samira.png",
+            }, {src: "../game_data_files/134.png", title: "魔法猫咪 悠米"}, {
+                src: "../game_data_files/135.png",
                 title: "沙漠玫瑰 莎弥拉"
-            }, {src: "../game_data_files/Thresh.png", title: "魂锁典狱长 锤石"}, {
-                src: "../game_data_files/Illaoi.png",
+            }, {src: "../game_data_files/136.png", title: "魂锁典狱长 锤石"}, {
+                src: "../game_data_files/137.png",
                 title: "海兽祭司 俄洛伊"
-            }, {src: "../game_data_files/RekSai.png", title: "虚空遁地兽 雷克塞"}, {
-                src: "../game_data_files/Ivern.png",
+            }, {src: "../game_data_files/138.png", title: "虚空遁地兽 雷克塞"}, {
+                src: "../game_data_files/139.png",
                 title: "翠神 艾翁"
-            }, {src: "../game_data_files/Kalista.png", title: "复仇之矛 卡莉丝塔"}, {
-                src: "../game_data_files/Bard.png",
+            }, {src: "../game_data_files/140.png", title: "复仇之矛 卡莉丝塔"}, {
+                src: "../game_data_files/141.png",
                 title: "星界游神 巴德"
-            }, {src: "../game_data_files/Rakan.png", title: "幻翎 洛"}, {
-                src: "../game_data_files/Xayah.png",
+            }, {src: "../game_data_files/142.png", title: "幻翎 洛"}, {
+                src: "../game_data_files/143.png",
                 title: "逆羽 霞"
-            }, {src: "../game_data_files/Ornn.png", title: "山隐之焰 奥恩"}, {
-                src: "../game_data_files/Sylas.png",
+            }, {src: "../game_data_files/144.png", title: "山隐之焰 奥恩"}, {
+                src: "../game_data_files/145.png",
                 title: "解脱者 塞拉斯"
-            }, {src: "../game_data_files/Neeko.png", title: "万花通灵 妮蔻"}, {
-                src: "../game_data_files/Aphelios.png",
+            }, {src: "../game_data_files/146.png", title: "万花通灵 妮蔻"}, {
+                src: "../game_data_files/147.png",
                 title: "残月之肃 厄斐琉斯"
-            }, {src: "../game_data_files/Rell.png", title: "镕铁少女 芮尔"}, {
-                src: "../game_data_files/Pyke.png",
+            }, {src: "../game_data_files/148.png", title: "镕铁少女 芮尔"}, {
+                src: "../game_data_files/149.png",
                 title: "血港鬼影 派克"
-            }, {src: "../game_data_files/Yone.png", title: "封魔剑魂 永恩"}, {
-                src: "../game_data_files/Sett.png",
+            }, {src: "../game_data_files/150.png", title: "封魔剑魂 永恩"}, {
+                src: "../game_data_files/151.png",
                 title: "腕豪 瑟提"
-            }, {src: "../game_data_files/Lillia.png", title: "含羞蓓蕾 莉莉娅"},];
+            }, {src: "../game_data_files/152.png", title: "含羞蓓蕾 莉莉娅"},];
 
         </script>
     </body>
