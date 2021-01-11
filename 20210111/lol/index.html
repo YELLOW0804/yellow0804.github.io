@@ -72,9 +72,11 @@
             $(function () {
                 $("#stopID").prop("disabled", true);
                 var image = new Image();
-                image.src = "../game_data_files/1.png"
-                $("#hero-2").prop("src", image.src)
-
+                for (var i = 0; i < 153; i++) {
+                    image.src = "../game_data_files/" + i + ".png";
+                    $("#hero-1").prop("src", image.src);
+                }
+                $("#hero-1").prop("src", "../game_data_files/default.png");
             });
             var timer1;
             var timer2;
