@@ -1,0 +1,48 @@
+.select-div {
+    margin: 4px;
+}
+.mid-div {
+    margin-top: 48px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.img-div {
+    padding-top: 8px;
+}
+
+.title {
+    text-align: center;
+    font-size: small;
+    padding-top: 8px;
+}
+
+.btn-div {
+    margin: 8px;
+}
+
+header {
+    background-color: #FFDE00;
+    height: 110px;
+}
+
+body {
+    padding-top: 110px;
+    padding-bottom: 80px;
+    background-color: beige;
+}
+
+footer {
+    background-color: #FFDE00;
+    height: 80px;
+}
+header h2 {
+    font-size: calc(2.5rem + 0.9vw);
+    text-align: center;
+    padding-top: 32px;
+}
+footer h2 {
+    font-size: calc(1.2rem + 0.9vw);
+    text-align: center;
+    padding-top: 8px;
+}
