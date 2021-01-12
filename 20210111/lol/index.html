@@ -25,21 +25,40 @@
         <div class="mid-div">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-xs-6 img-div">
+                    <div class="col-lg-6 col-xs-6">
+                        <p id="player-3" class="name">敖黛丽赫本</p>
+                    </div>
+                    <div class="col-lg-6 col-xs-6">
+                        <p id="player-4" class="name">玄天邪帝</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 img-div">
                         <img id="hero-1" class="center-block" src="../game_data_files/default.png">
-                        <p id="title-1" class="title">title</p>
+                        <p id="title-1" class="title">未选择</p>
                     </div>
-                    <div class="col-lg-3 col-xs-6 img-div">
+                    <div class="col-lg-6 col-xs-6 img-div">
                         <img id="hero-2" class="center-block" src="../game_data_files/default.png">
-                        <p id="title-2" class="title">title</p>
+                        <p id="title-2" class="title">未选择</p>
                     </div>
-                    <div class="col-lg-3 col-xs-6 img-div">
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6">
+                        <p id="player-1" class="name">0风向0</p>
+                    </div>
+                    <div class="col-lg-6 col-xs-6">
+                        <p id="player-2" class="name">Iamnemo</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 img-div">
                         <img id="hero-3" class="center-block" src="../game_data_files/default.png">
-                        <p id="title-3" class="title">title</p>
+                        <p id="title-3" class="title">未选择</p>
                     </div>
-                    <div class="col-lg-3 col-xs-6 img-div">
+                    <div class="col-lg-6 col-xs-6 img-div">
                         <img id="hero-4" class="center-block" src="../game_data_files/default.png">
-                        <p id="title-4" class="title">title</p>
+                        <p id="title-4" class="title">未选择</p>
                     </div>
                 </div>
             </div>
@@ -72,16 +91,12 @@
             $(function () {
                 $("#stopID").prop("disabled", true);
                 preloadImg(images);
-                console.log(images.length)
-                console.log(images)
-                // $("#hero-1").prop("src", images[0].src);
             });
 
             function preloadImg(images) {
                 for (var i = 0; i < 153; i++) {
                     images[i] = new Image();
                     images[i].src = "../game_data_files/" + i + ".png";
-
                 }
             }
 
