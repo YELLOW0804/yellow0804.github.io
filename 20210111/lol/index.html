@@ -88,9 +88,12 @@
 
         <script>
             var images = [];
+            var soundEffect, endEffect;
             $(function () {
                 $("#stopID").prop("disabled", true);
                 preloadImg(images);
+                soundEffect = new Audio("../sound/effect.mp3");
+                endEffect = new Audio("../sound/end.mp3");
             });
 
             function preloadImg(images) {
@@ -104,6 +107,7 @@
             var timer2;
             var timer3;
             var timer4;
+            var timer5;
             var alreadyIndex = [];
 
             function imgStart() {
@@ -111,8 +115,14 @@
                 timer2 = setInterval("changeImage2()", 10);
                 timer3 = setInterval("changeImage3()", 10);
                 timer4 = setInterval("changeImage4()", 10);
+                timer5 = setInterval("playSound()", 2);
+
                 $("#startID").prop("disabled", true);
                 $("#stopID").prop("disabled", false);
+            }
+
+            function playSound() {
+                soundEffect.play();
             }
 
             function changeImage1() {
@@ -176,6 +186,8 @@
                 clearInterval(timer2);
                 clearInterval(timer3);
                 clearInterval(timer4);
+                clearInterval(timer5);
+                endEffect.play();
                 $("#stopID").prop("disabled", true);
                 $("#startID").prop("disabled", false);
             }
